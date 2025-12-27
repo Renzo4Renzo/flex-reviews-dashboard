@@ -8,8 +8,9 @@ import PropertyInfo from '@/components/property/PropertyInfo';
 import BookingPanel from '@/components/property/BookingPanel';
 import { getPropertyImages } from '@/lib/data/propertyImages';
 import { getPropertyDetails } from '@/lib/data/propertyDetails';
+import broadcastManager from '@/lib/utils/broadcastChannel';
 import { useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NormalizedReview } from '@/types/review';
 
 const COLORS = {
@@ -28,6 +29,7 @@ export default function PropertyPage() {
   const id = params.id as string;
   const [propertyData, setPropertyData] = useState<PropertyData | null>(null);
   const [loading, setLoading] = useState(true);
+  const subscriptionSetup = useRef(false);
 
   const propertyDetails = getPropertyDetails(id);
   const images = getPropertyImages(id);
@@ -70,11 +72,11 @@ export default function PropertyPage() {
 
   // Listen for approval changes from dashboard (cross-tab communication)
   useEffect(() => {
-    if (typeof window === 'undefined' || !('BroadcastChannel' in window)) return;
+    // Prevent double subscription in React Strict Mode
+    if (subscriptionSetup.current) return;
+    subscriptionSetup.current = true;
 
-    const channel = new BroadcastChannel('review-updates');
-
-    channel.onmessage = async (event) => {
+    const unsubscribe = broadcastManager.subscribe('review-updates', async (event) => {
       if (event.data.type === 'approval-change') {
         const { reviewId, approved } = event.data;
 
@@ -108,9 +110,12 @@ export default function PropertyPage() {
           console.error('Failed to refresh reviews:', error);
         }
       }
-    };
+    });
 
-    return () => channel.close();
+    return () => {
+      subscriptionSetup.current = false;
+      unsubscribe();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Empty dependency array - only create listener once
 

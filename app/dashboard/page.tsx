@@ -6,6 +6,7 @@ import { IconFilter } from '@tabler/icons-react';
 import { useDashboardStore } from '@/lib/store/dashboardStore';
 import { calculatePropertyMetrics } from '@/lib/analytics/calculateMetrics';
 import { COLORS } from '@/lib/utils/designSystem';
+import broadcastManager from '@/lib/utils/broadcastChannel';
 import type { PropertyMetrics } from '@/types/analytics';
 import type { PropertyReviews, NormalizedReview } from '@/types/review';
 
@@ -119,13 +120,6 @@ export default function DashboardPage() {
     updatedReviews[reviewIndex] = { ...updatedReviews[reviewIndex], approved };
     setReviews(updatedReviews);
 
-    // Broadcast approval change to other tabs (property detail pages)
-    if (typeof window !== 'undefined' && 'BroadcastChannel' in window) {
-      const channel = new BroadcastChannel('review-updates');
-      channel.postMessage({ type: 'approval-change', reviewId, approved });
-      channel.close();
-    }
-
     try {
       const response = await fetch(`/api/reviews/${reviewId}/approve`, {
         method: 'POST',
@@ -139,6 +133,10 @@ export default function DashboardPage() {
 
       const updatedMetrics = calculatePropertyMetrics(updatedReviews);
       setMetrics(updatedMetrics);
+
+      // Broadcast approval change to other tabs AFTER successful update
+      // This ensures the data store is updated before other tabs fetch
+      broadcastManager.postMessage('review-updates', { type: 'approval-change', reviewId, approved });
     } catch (err) {
       console.error('Error updating approval:', err);
       setReviews(originalReviews);
