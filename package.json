@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@mantine/charts": "^7.15.0",
+    "@mantine/core": "^7.15.0",
+    "@mantine/dates": "^7.15.0",
+    "@mantine/hooks": "^7.15.0",
+    "@tabler/icons-react": "^3.29.0",
+    "dayjs": "^1.11.13",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "recharts": "^2.15.0",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
