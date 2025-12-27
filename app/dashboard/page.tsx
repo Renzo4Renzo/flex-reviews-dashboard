@@ -81,7 +81,7 @@ export default function DashboardPage() {
       setProperties(groupedProperties);
 
       if (groupedProperties.length > 0) {
-        setSelectedProperty('prop-001');
+        setSelectedProperty('prop-002');
       }
     } catch (err) {
       console.error('Error fetching reviews:', err);
