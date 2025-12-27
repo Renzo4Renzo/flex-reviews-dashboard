@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Force black text for all Mantine components on dashboard */
+.mantine-Input-label,
+.mantine-MultiSelect-label,
+.mantine-Select-label,
+.mantine-DatePickerInput-label,
+.mantine-RangeSlider-markLabel,
+.mantine-Modal-title,
+.mantine-Modal-body,
+.mantine-Select-option,
+.mantine-MultiSelect-option,
+.mantine-Combobox-option,
+.mantine-Select-input,
+.mantine-MultiSelect-input,
+.mantine-DatePickerInput-input {
+  color: black !important;
+}

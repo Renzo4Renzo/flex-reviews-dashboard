@@ -2,463 +2,66 @@
   "status": "success",
   "result": [
     {
-      "id": 1001,
+      "id": 3046,
       "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Absolutely spotless apartment with excellent location near Old Street. The space was clean and comfortable, perfect for my business trip.",
+      "status": "approved",
+      "rating": 9.3,
+      "publicReview": "Outstanding studio! Host was incredibly communicative and helpful. Highly recommend!",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
+      "submittedAt": "2025-07-05T09:30:00Z",
+      "guestName": "Diana Prince",
+      "listingName": "Shoreditch Heights Studio",
       "channelId": 2018,
-      "submittedAt": "2024-08-05T14:23:00Z",
-      "guestName": "Sarah M.",
-      "listingName": "Shoreditch Heights Studio"
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
-      "id": 1002,
+      "id": 3043,
       "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Great value for money. The host was very responsive and helpful with check-in. Location is perfect for restaurants and nightlife.",
+      "status": "approved",
+      "rating": 9,
+      "publicReview": "Excellent Shoreditch studio! Host was very communicative and accommodating.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 10}
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
-      "channelId": 2005,
-      "submittedAt": "2024-08-12T09:45:00Z",
-      "guestName": "James P.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1003,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Pristine apartment, exactly as described. Comfortable bed and modern amenities. Would definitely stay again.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 9}
-      ],
+      "submittedAt": "2025-07-10T10:30:00Z",
+      "guestName": "Marcus Wright",
+      "listingName": "Shoreditch Heights Studio",
       "channelId": 2018,
-      "submittedAt": "2024-08-28T16:30:00Z",
-      "guestName": "Emma L.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1004,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Lovely clean space in a convenient central location. Host communication was excellent throughout my stay.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 8}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-09-10T11:20:00Z",
-      "guestName": "Michael R.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1005,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "The apartment was spotless and very comfortable. Great price for such a nice place in this location.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 10}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-09-24T13:15:00Z",
-      "guestName": "Lisa K.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1006,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Clean, modern, and well-located. Host was friendly and responsive. Highly recommend for business travelers.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-10-08T15:40:00Z",
-      "guestName": "David W.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1007,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Excellent value and spotless throughout. The location is perfect for exploring Shoreditch and the City.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 10}
-      ],
-      "channelId": 2007,
-      "submittedAt": "2024-10-19T10:25:00Z",
-      "guestName": "Sophie T.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1008,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Very nice apartment, clean and comfortable. Host communication was excellent and check-in was smooth.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 9}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-11-03T12:50:00Z",
-      "guestName": "Thomas H.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1009,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Pristine and comfortable space. Great location with easy access to public transport. Would stay again.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-11-15T14:35:00Z",
-      "guestName": "Rachel B.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1010,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Fantastic location and spotless apartment. Host was very helpful and responsive throughout my stay.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-11-27T16:20:00Z",
-      "guestName": "Oliver G.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1011,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Clean and comfortable with excellent location. Great value for London. Host communication was perfect.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-12-10T11:45:00Z",
-      "guestName": "Anna F.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 1012,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Spotless apartment in a convenient location. Modern and comfortable, exactly what I needed for my trip.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 9}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-12-18T13:30:00Z",
-      "guestName": "Matthew C.",
-      "listingName": "Shoreditch Heights Studio"
-    },
-    {
-      "id": 2001,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Nice loft in Camden with good location near the market. Clean and comfortable for our weekend stay.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 8},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 8}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-07-15T10:30:00Z",
-      "guestName": "Jennifer S.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2002,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Great spot near Camden Market. Clean apartment with everything we needed. Good value overall.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 8},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 8}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-08-02T14:20:00Z",
-      "guestName": "Robert N.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2003,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Decent location but bathroom could be cleaner. Some mold in the shower area needs attention.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 6},
-        {"category": "communication", "rating": 8},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 7}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-08-20T12:15:00Z",
-      "guestName": "Linda H.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2004,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Location is good but apartment was not very clean. Kitchen had dirty dishes left in sink and bathroom needed work.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 5},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 6}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-09-05T15:40:00Z",
-      "guestName": "Marcus P.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2005,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Disappointed with cleanliness. Bathroom was dirty with visible mold and kitchen surfaces were unclean. Not worth the price.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 4},
-        {"category": "communication", "rating": 6},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 5}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-09-18T11:25:00Z",
-      "guestName": "Karen D.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2006,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Good location near Camden but apartment needs deep cleaning. Bathroom particularly dirty with mold issues.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 5},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 9},
-        {"category": "value", "rating": 6}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-10-03T13:50:00Z",
-      "guestName": "Steven M.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2007,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Very dirty apartment. Kitchen was filthy with old food residue and bathroom had moldy grout. Overpriced for the condition.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 3},
-        {"category": "communication", "rating": 6},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 4}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-10-12T16:30:00Z",
-      "guestName": "Patricia W.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2008,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Location is decent but cleanliness is terrible. Bathroom dirty with mold, kitchen unclean. Not worth the money.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 4},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 5}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-10-25T09:15:00Z",
-      "guestName": "Daniel K.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2009,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Unacceptable condition. Apartment was filthy - bathroom had black mold, kitchen surfaces dirty. Way overpriced for what you get.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 2},
-        {"category": "communication", "rating": 5},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 3}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-11-08T14:45:00Z",
-      "guestName": "Michelle T.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2010,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Very disappointed. Dirty bathroom with mold in corners, kitchen had unclean surfaces. Not worth the high price at all.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 3},
-        {"category": "communication", "rating": 6},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 4}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-11-15T10:20:00Z",
-      "guestName": "Christopher L.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2011,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Extremely dirty apartment. Bathroom filthy with mold everywhere, kitchen disgusting. Absolutely not worth the expensive price.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 2},
-        {"category": "communication", "rating": 5},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 3}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-11-22T12:35:00Z",
-      "guestName": "Jessica R.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2012,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Terrible condition. Bathroom had black mold and was very dirty, kitchen surfaces unclean. Overpriced and not acceptable.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 3},
-        {"category": "communication", "rating": 6},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 4}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-11-28T15:10:00Z",
-      "guestName": "Andrew B.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2013,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Completely unacceptable. Apartment was filthy - bathroom had moldy shower, kitchen dirty. Way too expensive for such poor condition.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 2},
-        {"category": "communication", "rating": 5},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 3}
-      ],
-      "channelId": 2007,
-      "submittedAt": "2024-12-05T11:55:00Z",
-      "guestName": "Laura G.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2014,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Very dirty place. Bathroom needs serious cleaning with mold issues, kitchen was unclean. Not worth the money at all.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 3},
-        {"category": "communication", "rating": 6},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 4}
-      ],
-      "channelId": 2005,
-      "submittedAt": "2024-12-14T13:40:00Z",
-      "guestName": "Brian H.",
-      "listingName": "Camden Loft"
-    },
-    {
-      "id": 2015,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": null,
-      "publicReview": "Awful experience. Dirty bathroom with visible mold, filthy kitchen. Overpriced for such terrible cleanliness standards.",
-      "reviewCategory": [
-        {"category": "cleanliness", "rating": 2},
-        {"category": "communication", "rating": 5},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 3}
-      ],
-      "channelId": 2018,
-      "submittedAt": "2024-12-20T16:25:00Z",
-      "guestName": "Nicole V.",
-      "listingName": "Camden Loft"
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3001,
@@ -467,15 +70,118 @@
       "rating": null,
       "publicReview": "Charming place with authentic local vibe. Great location in the heart of Brixton with easy access to the market and tube.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
       "channelId": 2018,
-      "submittedAt": "2024-07-10T12:30:00Z",
+      "submittedAt": "2025-07-10T12:30:00Z",
       "guestName": "Alex J.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3039,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.2,
+      "publicReview": "Amazing studio! Host communication was top-notch from booking to checkout. Very clean!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-07-15T09:00:00Z",
+      "guestName": "Sarah Connor",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2001,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Nice loft in Camden with good location near the market. Clean and comfortable for our weekend stay.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-07-15T10:30:00Z",
+      "guestName": "Jennifer S.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3033,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.1,
+      "publicReview": "Excellent studio! Host was super communicative throughout our stay. Very clean and great location.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-07-22T10:30:00Z",
+      "guestName": "Rachel Green",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3002,
@@ -484,15 +190,174 @@
       "rating": null,
       "publicReview": "Expensive for what you get. Apartment is quite small and tiny compared to photos. Not great value for the price.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 7},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 5}
+        {
+          "category": "cleanliness",
+          "rating": 7
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 5
+        }
       ],
       "channelId": 2005,
-      "submittedAt": "2024-07-25T14:15:00Z",
+      "submittedAt": "2025-07-25T14:15:00Z",
       "guestName": "Hans M.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3037,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.8,
+      "publicReview": "Beautiful loft! Host was very communicative and helpful. Great Camden location.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-07-28T13:30:00Z",
+      "guestName": "Ross Geller",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2002,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Great spot near Camden Market. Clean apartment with everything we needed. Good value overall.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-08-02T14:20:00Z",
+      "guestName": "Robert N.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3034,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.9,
+      "publicReview": "Great place! Host responded quickly to all our questions. Clean and comfortable.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-08-05T14:15:00Z",
+      "guestName": "Monica Geller",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 1001,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Absolutely spotless apartment with excellent location near Old Street. The space was clean and comfortable, perfect for my business trip.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-08-05T14:23:00Z",
+      "guestName": "Sarah M.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3023,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9,
+      "publicReview": "Beautiful loft in Camden! Everything was clean and the host was very responsive.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-08-08T10:30:00Z",
+      "guestName": "Lily Harris",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3003,
@@ -501,15 +366,174 @@
       "rating": null,
       "publicReview": "Wonderful authentic Brixton experience. Perfect location for exploring the local area. Great local vibe and atmosphere.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
       "channelId": 2018,
-      "submittedAt": "2024-08-08T11:45:00Z",
+      "submittedAt": "2025-08-08T11:45:00Z",
       "guestName": "Chloe D.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 1002,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Great value for money. The host was very responsive and helpful with check-in. Location is perfect for restaurants and nightlife.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 10
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-08-12T09:45:00Z",
+      "guestName": "James P.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3013,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.2,
+      "publicReview": "Wonderful studio in the heart of Shoreditch! Everything was spotless and the location couldn't be better.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-08-15T14:30:00Z",
+      "guestName": "Emma Thompson",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 3038,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9,
+      "publicReview": "Wonderful loft in Camden! Host was super responsive and helpful with recommendations.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-08-18T15:00:00Z",
+      "guestName": "Chandler Bing",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 3019,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.3,
+      "publicReview": "Amazing apartment! Super clean and the location is perfect for experiencing Brixton's culture.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-08-20T12:00:00Z",
+      "guestName": "Charlotte Taylor",
+      "listingName": "Brixton Apartment",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2003,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Decent location but bathroom could be cleaner. Some mold in the shower area needs attention.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 6
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-08-20T12:15:00Z",
+      "guestName": "Linda H.",
+      "listingName": "Camden Loft"
     },
     {
       "id": 3004,
@@ -518,15 +542,195 @@
       "rating": null,
       "publicReview": "Overpriced and misleading. Photos make it look bigger than it is. Very small and tiny space, not worth the expensive price.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 8},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 4}
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 4
+        }
       ],
       "channelId": 2007,
-      "submittedAt": "2024-08-22T15:20:00Z",
+      "submittedAt": "2025-08-22T15:20:00Z",
       "guestName": "Franz K.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3025,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.8,
+      "publicReview": "Excellent location and very clean studio. Great value for money!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-08-25T13:00:00Z",
+      "guestName": "Maria Garcia",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 1003,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Pristine apartment, exactly as described. Comfortable bed and modern amenities. Would definitely stay again.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-08-28T16:30:00Z",
+      "guestName": "Emma L.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3014,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.5,
+      "publicReview": "Great place, very clean. Host was responsive. Only minor issue was some noise from the street.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 7
+        }
+      ],
+      "submittedAt": "2025-09-03T11:20:00Z",
+      "guestName": "James Mitchell",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 3030,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.2,
+      "publicReview": "Excellent apartment! Very clean and the host was extremely helpful.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-09-05T10:15:00Z",
+      "guestName": "Lars Nielsen",
+      "listingName": "Brixton Apartment",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 2004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Location is good but apartment was not very clean. Kitchen had dirty dishes left in sink and bathroom needed work.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 5
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 6
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-09-05T15:40:00Z",
+      "guestName": "Marcus P.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 1004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Lovely clean space in a convenient central location. Host communication was excellent throughout my stay.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-09-10T11:20:00Z",
+      "guestName": "Michael R.",
+      "listingName": "Shoreditch Heights Studio"
     },
     {
       "id": 3005,
@@ -535,15 +739,170 @@
       "rating": null,
       "publicReview": "Lovely charming apartment in the heart of Brixton. Great location with authentic local atmosphere. Would definitely stay again.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
       "channelId": 2018,
-      "submittedAt": "2024-09-12T10:35:00Z",
+      "submittedAt": "2025-09-12T10:35:00Z",
       "guestName": "Zoe W.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3035,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.3,
+      "publicReview": "Fantastic stay! The host was extremely helpful and responsive. Highly recommend this place.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-09-12T11:45:00Z",
+      "guestName": "Phoebe Buffay",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Disappointed with cleanliness. Bathroom was dirty with visible mold and kitchen surfaces were unclean. Not worth the price.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 4
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 5
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-09-18T11:25:00Z",
+      "guestName": "Karen D.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3020,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.9,
+      "publicReview": "Wonderful stay! Clean, comfortable, and the host was very accommodating with our late check-in.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-09-18T15:30:00Z",
+      "guestName": "Henry Wilson",
+      "listingName": "Brixton Apartment",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 1005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "The apartment was spotless and very comfortable. Great price for such a nice place in this location.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 10
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-09-24T13:15:00Z",
+      "guestName": "Lisa K.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3024,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.5,
+      "publicReview": "Great location and clean apartment. Host provided excellent local tips.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-09-25T16:00:00Z",
+      "guestName": "Jack Robinson",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3006,
@@ -552,15 +911,199 @@
       "rating": null,
       "publicReview": "Disappointing value. Much smaller than photos suggest. Tiny space for the expensive price. Photos misleading.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 7},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 5}
+        {
+          "category": "cleanliness",
+          "rating": 7
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 5
+        }
       ],
       "channelId": 2005,
-      "submittedAt": "2024-09-28T13:50:00Z",
+      "submittedAt": "2025-09-28T13:50:00Z",
       "guestName": "Pierre L.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3026,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.3,
+      "publicReview": "Clean and well-located property. Good value overall.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-09-30T14:30:00Z",
+      "guestName": "Carlos Rodriguez",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 2006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Good location near Camden but apartment needs deep cleaning. Bathroom particularly dirty with mold issues.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 5
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 6
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-10-03T13:50:00Z",
+      "guestName": "Steven M.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3036,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.7,
+      "publicReview": "Very nice studio. Host communication was excellent. Everything was clean and tidy.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-10-05T16:20:00Z",
+      "guestName": "Joey Tribbiani",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 1006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Clean, modern, and well-located. Host was friendly and responsive. Highly recommend for business travelers.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-10-08T15:40:00Z",
+      "guestName": "David W.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 2007,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Very dirty apartment. Kitchen was filthy with old food residue and bathroom had moldy grout. Overpriced for the condition.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 3
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 4
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-10-12T16:30:00Z",
+      "guestName": "Patricia W.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3015,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.5,
+      "publicReview": "Perfect stay! Clean, modern, and the host was extremely helpful with local recommendations.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-10-12T16:45:00Z",
+      "guestName": "Sophie Anderson",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3007,
@@ -569,15 +1112,170 @@
       "rating": null,
       "publicReview": "Perfect location in Brixton with great local vibe. Charming apartment, authentic experience. Host very helpful and responsive.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
       "channelId": 2018,
-      "submittedAt": "2024-10-15T12:20:00Z",
+      "submittedAt": "2025-10-15T12:20:00Z",
       "guestName": "Mia S.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3042,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.9,
+      "publicReview": "Lovely Camden loft! Host communication was excellent and very helpful.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-10-18T11:15:00Z",
+      "guestName": "John Connor",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 1007,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Excellent value and spotless throughout. The location is perfect for exploring Shoreditch and the City.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 10
+        }
+      ],
+      "channelId": 2007,
+      "submittedAt": "2025-10-19T10:25:00Z",
+      "guestName": "Sophie T.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3027,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9,
+      "publicReview": "Fantastic studio! Everything was spotless and exactly as pictured.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-10-20T11:00:00Z",
+      "guestName": "Anna Schmidt",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 2008,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Location is decent but cleanliness is terrible. Bathroom dirty with mold, kitchen unclean. Not worth the money.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 4
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 5
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-10-25T09:15:00Z",
+      "guestName": "Daniel K.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3021,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.1,
+      "publicReview": "Great apartment with everything you need. Very clean and host was excellent with communication.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-10-28T11:45:00Z",
+      "guestName": "Amelia Johnson",
+      "listingName": "Brixton Apartment",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3008,
@@ -586,15 +1284,143 @@
       "rating": null,
       "publicReview": "Not as described. Very small and cramped. Overpriced for such a tiny space. Not good value at all.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 8},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 4}
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 4
+        }
       ],
       "channelId": 2005,
-      "submittedAt": "2024-10-30T16:10:00Z",
+      "submittedAt": "2025-10-30T16:10:00Z",
       "guestName": "Klaus B.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 1008,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Very nice apartment, clean and comfortable. Host communication was excellent and check-in was smooth.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-11-03T12:50:00Z",
+      "guestName": "Thomas H.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3016,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.8,
+      "publicReview": "Really enjoyed our stay. Great location for exploring London. Everything was as described.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-11-08T09:15:00Z",
+      "guestName": "Oliver Davis",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2009,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Unacceptable condition. Apartment was filthy - bathroom had black mold, kitchen surfaces dirty. Way overpriced for what you get.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 2
+        },
+        {
+          "category": "communication",
+          "rating": 5
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 3
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-11-08T14:45:00Z",
+      "guestName": "Michelle T.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3031,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.7,
+      "publicReview": "Great place, very clean and comfortable. Good value for the area.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-11-10T14:00:00Z",
+      "guestName": "Giulia Rossi",
+      "listingName": "Brixton Apartment",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
     },
     {
       "id": 3009,
@@ -603,15 +1429,199 @@
       "rating": null,
       "publicReview": "Fantastic charming place with authentic Brixton character. Great location for local restaurants and market. Highly recommend.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 10},
-        {"category": "communication", "rating": 9},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 10}
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 10
+        }
       ],
       "channelId": 2018,
-      "submittedAt": "2024-11-14T11:30:00Z",
+      "submittedAt": "2025-11-14T11:30:00Z",
       "guestName": "Grace T.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 2010,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Very disappointed. Dirty bathroom with mold in corners, kitchen had unclean surfaces. Not worth the high price at all.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 3
+        },
+        {
+          "category": "communication",
+          "rating": 6
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 4
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-11-15T10:20:00Z",
+      "guestName": "Christopher L.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 1009,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Pristine and comfortable space. Great location with easy access to public transport. Would stay again.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-11-15T14:35:00Z",
+      "guestName": "Rachel B.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3028,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.5,
+      "publicReview": "Very clean and comfortable. Great location for exploring London.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-11-15T15:45:00Z",
+      "guestName": "Pierre Dubois",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 3045,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.1,
+      "publicReview": "Beautiful Camden loft! Host was super responsive and provided great local tips.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-11-20T13:00:00Z",
+      "guestName": "Dallas Howard",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2011,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Extremely dirty apartment. Bathroom filthy with mold everywhere, kitchen disgusting. Absolutely not worth the expensive price.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 2
+        },
+        {
+          "category": "communication",
+          "rating": 5
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 3
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-11-22T12:35:00Z",
+      "guestName": "Jessica R.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3017,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9,
+      "publicReview": "Lovely studio, very clean and well-maintained. Host was quick to respond to all questions.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-11-24T13:30:00Z",
+      "guestName": "Isabella White",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     },
     {
       "id": 3010,
@@ -620,15 +1630,191 @@
       "rating": null,
       "publicReview": "Too expensive for what it is. Space is much smaller than advertised. Tiny apartment, misleading photos. Not worth the price.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 7},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 8},
-        {"category": "value", "rating": 5}
+        {
+          "category": "cleanliness",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 5
+        }
       ],
       "channelId": 2007,
-      "submittedAt": "2024-11-26T14:45:00Z",
+      "submittedAt": "2025-11-26T14:45:00Z",
       "guestName": "Johan S.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 1010,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Fantastic location and spotless apartment. Host was very helpful and responsive throughout my stay.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-11-27T16:20:00Z",
+      "guestName": "Oliver G.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3040,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.6,
+      "publicReview": "Great studio with excellent host communication. Would stay again!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-11-28T12:00:00Z",
+      "guestName": "Kyle Reese",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2012,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Terrible condition. Bathroom had black mold and was very dirty, kitchen surfaces unclean. Overpriced and not acceptable.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 3
+        },
+        {
+          "category": "communication",
+          "rating": 6
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 4
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-11-28T15:10:00Z",
+      "guestName": "Andrew B.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3022,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.6,
+      "publicReview": "Nice place, clean and well-located. Good value for the area. Host was helpful.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-12-01T14:20:00Z",
+      "guestName": "George Martin",
+      "listingName": "Brixton Apartment",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 3018,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.7,
+      "publicReview": "Great place overall. Clean and comfortable. Would definitely recommend to friends.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 8
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-12-05T10:00:00Z",
+      "guestName": "William Brown",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2013,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Completely unacceptable. Apartment was filthy - bathroom had moldy shower, kitchen dirty. Way too expensive for such poor condition.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 2
+        },
+        {
+          "category": "value",
+          "rating": 3
+        }
+      ],
+      "channelId": 2007,
+      "submittedAt": "2025-12-05T11:55:00Z",
+      "guestName": "Laura G.",
+      "listingName": "Camden Loft"
     },
     {
       "id": 3011,
@@ -637,15 +1823,263 @@
       "rating": null,
       "publicReview": "Wonderful authentic local experience. Great location in the heart of Brixton. Charming apartment with perfect vibe.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 9},
-        {"category": "communication", "rating": 10},
-        {"category": "location", "rating": 10},
-        {"category": "value", "rating": 9}
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
       ],
       "channelId": 2018,
-      "submittedAt": "2024-12-09T10:15:00Z",
+      "submittedAt": "2025-12-09T10:15:00Z",
       "guestName": "Isabella R.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 1011,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Clean and comfortable with excellent location. Great value for London. Host communication was perfect.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 10
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-12-10T11:45:00Z",
+      "guestName": "Anna F.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3029,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.9,
+      "publicReview": "Wonderful stay! Clean, modern, and perfectly located. Highly recommend!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-12-10T12:30:00Z",
+      "guestName": "Elena Popov",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 2014,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Very dirty place. Bathroom needs serious cleaning with mold issues, kitchen was unclean. Not worth the money at all.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 3
+        },
+        {
+          "category": "communication",
+          "rating": 6
+        },
+        {
+          "category": "location",
+          "rating": 8
+        },
+        {
+          "category": "value",
+          "rating": 4
+        }
+      ],
+      "channelId": 2005,
+      "submittedAt": "2025-12-14T13:40:00Z",
+      "guestName": "Brian H.",
+      "listingName": "Camden Loft"
+    },
+    {
+      "id": 3032,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9,
+      "publicReview": "Wonderful apartment with excellent communication from the host. Very clean!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-12-15T11:30:00Z",
+      "guestName": "Hans Mueller",
+      "listingName": "Brixton Apartment",
+      "channelId": 2005,
+      "channelName": "Booking.com",
+      "approved": true
+    },
+    {
+      "id": 1012,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Spotless apartment in a convenient location. Modern and comfortable, exactly what I needed for my trip.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-12-18T13:30:00Z",
+      "guestName": "Matthew C.",
+      "listingName": "Shoreditch Heights Studio"
+    },
+    {
+      "id": 3041,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 9.4,
+      "publicReview": "Perfect place! Host was very responsive and helpful throughout our stay.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 10
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-12-18T14:30:00Z",
+      "guestName": "Ellen Ripley",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 3044,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.8,
+      "publicReview": "Great studio, host communication was fantastic. Clean and comfortable!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 10
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 8
+        }
+      ],
+      "submittedAt": "2025-12-20T15:45:00Z",
+      "guestName": "Kate Connor",
+      "listingName": "Shoreditch Heights Studio",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
+    },
+    {
+      "id": 2015,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Awful experience. Dirty bathroom with visible mold, filthy kitchen. Overpriced for such terrible cleanliness standards.",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 2
+        },
+        {
+          "category": "communication",
+          "rating": 5
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 3
+        }
+      ],
+      "channelId": 2018,
+      "submittedAt": "2025-12-20T16:25:00Z",
+      "guestName": "Nicole V.",
+      "listingName": "Camden Loft"
     },
     {
       "id": 3012,
@@ -654,17 +2088,60 @@
       "rating": null,
       "publicReview": "Overpriced and not as described. Very small apartment, much tinier than photos suggest. Expensive for the size.",
       "reviewCategory": [
-        {"category": "cleanliness", "rating": 8},
-        {"category": "communication", "rating": 7},
-        {"category": "location", "rating": 7},
-        {"category": "value", "rating": 5}
+        {
+          "category": "cleanliness",
+          "rating": 8
+        },
+        {
+          "category": "communication",
+          "rating": 7
+        },
+        {
+          "category": "location",
+          "rating": 7
+        },
+        {
+          "category": "value",
+          "rating": 5
+        }
       ],
       "channelId": 2005,
-      "submittedAt": "2024-12-22T15:30:00Z",
+      "submittedAt": "2025-12-22T15:30:00Z",
       "guestName": "Marco P.",
       "listingName": "Brixton Apartment"
+    },
+    {
+      "id": 3047,
+      "type": "guest-to-host",
+      "status": "approved",
+      "rating": 8.9,
+      "publicReview": "Fantastic Camden loft! Host communication was excellent throughout. Very clean!",
+      "reviewCategory": [
+        {
+          "category": "cleanliness",
+          "rating": 9
+        },
+        {
+          "category": "communication",
+          "rating": 9
+        },
+        {
+          "category": "location",
+          "rating": 9
+        },
+        {
+          "category": "value",
+          "rating": 9
+        }
+      ],
+      "submittedAt": "2025-12-22T16:30:00Z",
+      "guestName": "Bruce Wayne",
+      "listingName": "Camden Loft",
+      "channelId": 2018,
+      "channelName": "Airbnb",
+      "approved": true
     }
   ],
-  "count": 39,
+  "count": 74,
   "offset": null
 }

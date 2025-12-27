@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { NormalizedReview } from '@/types/review';
 import dayjs from 'dayjs';
 
-interface FilterState {
+export interface FilterState {
   channels: string[];
   categories: string[];
   dateRange: [Date | null, Date | null];

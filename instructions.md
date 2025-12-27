@@ -770,9 +770,45 @@ Verify:
 ### Prompt for Claude Code:
 
 ```
+IMPORTANT: Before creating components, create shared utilities following DRY principles.
+
+0. Create lib/utils/helpers.ts:
+
+   Shared utility functions for repeated logic across components
+
+   Export getRatingColor function:
+   - Takes rating number (0-10)
+   - Returns 'red' if less than 7, 'yellow' if less than 8, 'green' otherwise
+
+   Export getStatusColor function:
+   - Takes status: 'critical' | 'warning' | 'good'
+   - Returns corresponding Mantine color string
+
+   Export getStatusIcon function:
+   - Takes status string
+   - Returns emoji: '🔴' for critical, '⚠️' for warning, '✅' for good
+
+   Export calculateAverage function:
+   - Takes number array
+   - Returns average rounded to 1 decimal, or 0 if empty
+
+   Export formatCategoryName function:
+   - Takes category string
+   - Replaces underscores with spaces and capitalizes
+
+   Export getDeltaColor function:
+   - Takes delta number
+   - Returns 'green' if positive, 'red' if negative, 'gray' if zero
+
+   Export formatDelta function:
+   - Takes delta number
+   - Returns formatted string with sign ("+X.X" or "-X.X")
+
 Create first 3 dashboard components:
 
-1. Create components/dashboard/PropertyTabs.tsx:
+1. Create components/dashboard/PropertySelector.tsx:
+
+   SCALABILITY: Uses Select dropdown instead of Tabs for better scalability with 100+ properties
 
    Client component with 'use client' directive
 
@@ -781,26 +817,31 @@ Create first 3 dashboard components:
    - selectedId: string
    - onSelect: function taking id string
 
-   Import Mantine Tabs, Badge, Group, Text
+   Import Mantine Select, Badge, Group, Text
+   Import calculateAverage and getRatingColor from lib/utils/helpers
+   Import useMemo from react
 
-   Use Mantine Tabs component with value as selectedId and onChange calling onSelect (check for null first)
+   Use useMemo to calculate selectData from properties:
+   - Map each property to object with value (propertyId), label (propertyName), and avgRating
+   - Calculate avgRating using calculateAverage helper with review ratings
 
-   Tabs.List contains Tabs.Tab for each property:
-   - key is property.propertyId
-   - value is property.propertyId
-   - Content is Group with gap xs containing:
-     * Property name as Text
-     * Average rating badge with color red if less than 7, yellow if less than 8, green otherwise
-     * Badge text formatted to 1 decimal as "X.X"
+   Render Select component:
+   - label "Select Property"
+   - placeholder "Choose a property"
+   - data mapped from selectData (value and label only)
+   - value as selectedId
+   - onChange calls onSelect (check for null)
+   - searchable true (scales to 100+ properties)
+   - clearable false
+   - size md
+   - Styled with fontWeight 500 for input
 
-   Create helper calculateAvgRating function:
-   - Takes PropertyReviews
-   - Sums all review ratings
-   - Divides by count
-   - Rounds to 1 decimal
-   - Returns 0 if no reviews
+   Below Select, show current rating if selectedProperty exists:
+   - Group with gap xs, margin top sm
+   - Text "Current Rating:" size sm, color dimmed
+   - Badge with getRatingColor based on avgRating, size lg, showing "⭐ X.X"
 
-   Export PropertyTabs
+   Export PropertySelector
 
 2. Create components/dashboard/StatsOverview.tsx:
 
@@ -841,6 +882,7 @@ Create first 3 dashboard components:
 
    Import Mantine Card, Stack, Group, Text, Progress, Badge
    Import icons IconArrowUp, IconArrowDown, IconMinus
+   Import getStatusColor, getDeltaColor, formatDelta, formatCategoryName from lib/utils/helpers
 
    Use Card container with shadow sm, padding lg, withBorder
    Title "Category Performance" as Text size lg, fontWeight 700, margin bottom md
@@ -851,24 +893,25 @@ Create first 3 dashboard components:
    For each category create div containing:
 
    First row is Group with justify space-between, margin bottom xs:
-   - Left: category name as Text size sm, text transform capitalize, fontWeight 500 with underscores replaced by spaces
+   - Left: category name as Text size sm, fontWeight 500, text transform capitalize
+   - Use formatCategoryName helper for category display
    - Right: Group with gap xs containing:
      * Rating number as Text size sm, fontWeight 600, formatted to 1 decimal
      * If delta30d not zero, Badge with:
-       - Color green if positive, red if negative, gray if zero
-       - Icon up, down, or minus arrow based on delta sign
-       - Text as "+X.X" or "-X.X" formatted to 1 decimal
+       - Color from getDeltaColor helper
+       - Icon component based on delta (create getDeltaIcon helper returning icon component)
+       - Text from formatDelta helper
+       - leftSection with DeltaIcon size 12
        - variant light, size sm
 
    Second row is Progress component with:
    - value as (avgRating divided by 10 times 100)
-   - color red if status critical, yellow if warning, green if good
+   - color from getStatusColor helper using category.status
    - size md
 
-   Create helper functions:
-   - getProgressColor taking status string
-   - getDeltaIcon taking delta number
-   - getDeltaColor taking delta number
+   Create local helper getDeltaIcon function:
+   - Takes delta number
+   - Returns IconArrowUp if positive, IconArrowDown if negative, IconMinus if zero
 
    Export CategoryPerformance
 
@@ -908,11 +951,12 @@ Create next 3 dashboard components:
    - h as 300
    - data as validData
    - dataKey as "month"
-   - series array with 4 objects:
+   - series array with 5 objects (ALL 4 CATEGORIES plus overall):
      * name avgRating, label Overall, color blue
      * name cleanliness, label Cleanliness, color teal
-     * name value, label Value, color orange
+     * name communication, label Communication, color violet
      * name location, label Location, color green
+     * name value, label Value, color orange
    - curveType as "monotone"
    - withLegend true
    - withTooltip true
@@ -923,11 +967,19 @@ Create next 3 dashboard components:
 
 5. Create components/dashboard/SentimentDisplay.tsx:
 
+   SCALABILITY: Limits keywords to top 10 to prevent overflow with large datasets
+
    Server component
 
    Props: sentiment: SentimentData
 
    Import Mantine Card, Grid, Text, Badge, Stack, Alert, List
+
+   Define constant MAX_KEYWORDS_DISPLAY = 10
+
+   Slice sentiment data to top keywords:
+   - topNegative = sentiment.negative.slice(0, MAX_KEYWORDS_DISPLAY)
+   - topPositive = sentiment.positive.slice(0, MAX_KEYWORDS_DISPLAY)
 
    Use Stack with gap md
 
@@ -938,25 +990,27 @@ Create next 3 dashboard components:
    Left column (Grid.Col span base 12, sm 6):
    - Stack with gap xs
    - Header "🔴 Negative (Rating < 7)" as Text fontWeight 600, color red
-   - If sentiment.negative length greater than 0:
+   - If topNegative length greater than 0:
      * Stack with gap xs
-     * Map through negative keywords creating Badge for each:
+     * Map through topNegative creating Badge for each:
        - color red
        - variant light
        - size lg
-       - text as "keyword (count)"
+       - style textTransform 'none'
+       - text as "keyword.phrase (keyword.count)"
    - Else show "No negative patterns detected" as Text size sm, color dimmed
 
    Right column (Grid.Col span base 12, sm 6):
    - Stack with gap xs
    - Header "🟢 Positive (Rating > 8)" as Text fontWeight 600, color green
-   - If sentiment.positive length greater than 0:
+   - If topPositive length greater than 0:
      * Stack with gap xs
-     * Map through positive keywords creating Badge for each:
+     * Map through topPositive creating Badge for each:
        - color green
        - variant light
        - size lg
-       - text as "keyword (count)"
+       - style textTransform 'none'
+       - text as "keyword.phrase (keyword.count)"
    - Else show "No positive patterns detected" as Text size sm, color dimmed
 
    Second section (only if sentiment.actionItems length greater than 0):
@@ -973,6 +1027,7 @@ Create next 3 dashboard components:
    Props: channelStats: ChannelStats array
 
    Import Mantine Card, Stack, Group, Text, Badge
+   Import getStatusIcon and getStatusColor from lib/utils/helpers
 
    Use Card container with shadow sm, padding lg, withBorder
    Title "Performance by Channel" as Text size lg, fontWeight 700, margin bottom md
@@ -983,16 +1038,12 @@ Create next 3 dashboard components:
    For each channel create Group with justify space-between:
    - Left: channel name as Text with fontWeight 500
    - Right: Group with gap xs containing:
-     * Status icon as text: '🔴' if critical, '⚠️' if warning, '✅' if good
+     * Status icon from getStatusIcon helper
      * Rating badge with:
-       - color based on status (red, yellow, or green)
+       - color from getStatusColor helper
        - variant light
        - text as "X.X avg" formatted to 1 decimal
      * Review count as Text size sm, color dimmed, format "(X reviews)"
-
-   Create helper functions:
-   - getStatusIcon taking status string
-   - getRatingColor taking status string
 
    Export ChannelStats
 
@@ -1012,14 +1063,19 @@ Create final 3 dashboard components:
 
 7. Create components/dashboard/CriticalIssues.tsx:
 
-   Client component with 'use client' directive (has interactive buttons)
+   Client component with 'use client' directive (has interactive buttons and modal)
 
    Props:
    - criticalReviews: CriticalReview array
    - onApprovalToggle: function taking id number and approved boolean
 
-   Import Mantine Card, Stack, Group, Text, Badge, Button
-   Import formatDate utility
+   Import useState from react
+   Import Mantine Card, Stack, Group, Text, Badge, Button, Modal
+   Import formatDate from lib/utils/dateHelpers
+   Import formatCategoryName from lib/utils/helpers
+
+   State management:
+   - selectedReview: CriticalReview | null (for modal)
 
    Use Card container with shadow sm, padding lg, withBorder
    Title "🚨 Critical Issues (Last 30 Days)" as Text size lg, fontWeight 700, margin bottom md
@@ -1046,18 +1102,31 @@ Create final 3 dashboard components:
      - Badge showing worst category with:
        * color red
        * variant light
-       * text as "category: rating/10" with category capitalized and underscores replaced
+       * text as "category: rating/10" using formatCategoryName helper
 
      Review excerpt as Text size sm showing first 100 chars, add "..." if excerpt shorter than full review
 
      Action buttons as Group margin top md, gap xs:
-     - Button "View Full" with size xs, variant outline (placeholder onclick)
+     - Button "View Full" with size xs, variant outline, onClick sets selectedReview to current review
      - Button "Approve" with size xs, color green, onclick calls onApprovalToggle with review.id and true, disabled if already approved
      - Button "Reject" with size xs, color red, onclick calls onApprovalToggle with review.id and false, disabled if already not approved
+
+   Modal component (after Stack):
+   - opened when selectedReview is not null
+   - onClose sets selectedReview to null
+   - title "Full Review Details"
+   - size lg
+   - Content (if selectedReview exists):
+     * Stack with gap md showing:
+       - Group with guest name (Text fw 600), date and channel (Text size sm, color dimmed), and rating badge
+       - Worst category section with label and Badge
+       - Full review text with label and content (lineHeight 1.6)
 
    Export CriticalIssues
 
 8. Create components/dashboard/FilterBar.tsx:
+
+   SCALABILITY: Uses searchable MultiSelect components that scale to 100+ options
 
    Client component with 'use client' directive
 
@@ -1066,53 +1135,64 @@ Create final 3 dashboard components:
    - onFilterChange: function taking partial FilterState
    - onClearFilters: function
 
-   Import Mantine Group, Select, MultiSelect, Button
+   Import Mantine Group, MultiSelect, Button, Stack, Text
    Import DatePickerInput from @mantine/dates
    Import RangeSlider from @mantine/core
-   Import getAllChannels utility
+   Import FilterState from lib/store/dashboardStore
+   Import getAllChannels from lib/utils/channelMapping
 
-   Use Group with gap md and wrap
+   Define CATEGORY_OPTIONS constant array with objects:
+   - value cleanliness, label Cleanliness
+   - value communication, label Communication
+   - value location, label Location
+   - value value, label Value
+
+   Use Stack with gap md as container
+
+   First Group with gap md and wrap containing:
 
    Channel MultiSelect:
    - label "Channels"
    - placeholder "All channels"
-   - data from getAllChannels mapped to value and label format
+   - data from getAllChannels mapped to {value: String(id), label: name}
    - value as filters.channels
-   - onChange calls onFilterChange with new channels
-   - clearable and searchable
+   - onChange calls onFilterChange with {channels: value}
+   - clearable and searchable true (scales to 100+ channels)
+   - style minWidth 200
 
    Category MultiSelect:
    - label "Categories"
    - placeholder "All categories"
-   - data array with objects:
-     * value cleanliness, label Cleanliness
-     * value communication, label Communication
-     * value location, label Location
-     * value value, label Value
+   - data as CATEGORY_OPTIONS
    - value as filters.categories
-   - onChange calls onFilterChange with new categories
-   - clearable and searchable
+   - onChange calls onFilterChange with {categories: value}
+   - clearable and searchable true
+   - style minWidth 200
 
    Date Range Picker:
    - type "range"
    - label "Date Range"
    - placeholder "Pick dates"
    - value as filters.dateRange
-   - onChange calls onFilterChange with new dateRange
+   - onChange calls onFilterChange with {dateRange: value}
    - clearable
+   - style minWidth 250
 
-   Rating Range Slider:
-   - label "Rating Range"
-   - min 1, max 10, step 0.5, minRange 0.5
-   - value as filters.ratingRange
-   - onChange calls onFilterChange with new ratingRange
-   - marks array with objects: value 1 label "1", value 5 label "5", value 10 label "10"
-   - Display current range above slider as "X.X - X.X"
+   Rating Range Slider section (separate div):
+   - Group with justify space-between, margin bottom xs:
+     * Text "Rating Range" size sm, fontWeight 500
+     * Text showing current range size sm, color dimmed formatted as "X.X - X.X"
+   - RangeSlider:
+     * min 1, max 10, step 0.5, minRange 0.5
+     * value as filters.ratingRange
+     * onChange calls onFilterChange with {ratingRange: value as [number, number]}
+     * marks: value 1 label "1", value 5 label "5", value 10 label "10"
 
    Clear Filters Button:
    - variant subtle
    - color gray
    - onClick calls onClearFilters
+   - size sm
    - text "Clear Filters"
 
    Export FilterBar
@@ -1129,31 +1209,39 @@ Create final 3 dashboard components:
    Import Mantine Group, Select, Button, Text
    Import icons IconArrowUp and IconArrowDown
 
+   Define SORT_OPTIONS constant array with objects:
+   - value date, label Date
+   - value rating, label Rating
+   - value channel, label Channel
+
    Use Group with gap md
 
    Label as Text: "Sort by:" with fontWeight 500
 
    Sort Field Select:
-   - data array with objects:
-     * value date, label Date
-     * value rating, label Rating
-     * value channel, label Channel
+   - data as SORT_OPTIONS
    - value as sortBy
-   - onChange calls onSortChange with new value and current sortOrder
-   - no label
+   - onChange calls onSortChange with new value and current sortOrder (check for null)
+   - style width 150
+   - no label prop
 
    Sort Order Toggle Button:
    - variant subtle
-   - onClick toggles between asc and desc, calls onSortChange with current sortBy and new order
-   - Shows IconArrowUp if sortOrder is asc, IconArrowDown if desc
-   - aria-label or tooltip "Toggle sort order"
+   - onClick toggles sortOrder (asc to desc, desc to asc) and calls onSortChange
+   - leftSection shows IconArrowUp if sortOrder is asc, IconArrowDown if desc (size 16)
+   - Text shows "Ascending" if asc, "Descending" if desc
+   - aria-label "Toggle sort order"
+
+   Create toggleSortOrder helper function:
+   - Determines newOrder based on current sortOrder
+   - Calls onSortChange with sortBy and newOrder
 
    Export SortControls
 
 Verify:
 - Run npm run build
 - Check TypeScript errors
-- All 9 dashboard components complete
+- All 9 dashboard components complete (PropertySelector, StatsOverview, CategoryPerformance, TrendChart, SentimentDisplay, ChannelStats, CriticalIssues, FilterBar, SortControls)
 ```
 
 ---
@@ -1232,7 +1320,7 @@ Page header div:
 LoadingOverlay with visible based on loading state
 
 If not loading and properties length greater than 0:
-- PropertyTabs with properties, selectedId, and onSelect
+- PropertySelector with properties, selectedId, and onSelect
 
 If metrics exists: StatsOverview with metrics
 
@@ -1276,14 +1364,241 @@ Verify:
 
 ---
 
-## Phase 10: Property Page Components
+## Phase 10: Property Images & Details Data Layer
 
 ### Prompt for Claude Code:
 
 ```
-Create components for public property detail page:
+Create property images and details data layer using Unsplash for high-quality images:
 
-1. Create components/property/PropertyHeader.tsx:
+1. Create lib/data/propertyImages.ts:
+
+   IMPORTANT: Uses Unsplash Source API for zero-storage image solution
+   Benefits: No image files in repo, CDN-hosted, high quality, unique per property
+
+   Define PropertyImage interface:
+   - id: string
+   - url: string
+   - alt: string
+
+   Define PropertyImagesData interface:
+   - propertyId: string
+   - images: PropertyImage array
+
+   Constants:
+   - IMAGE_WIDTH: 1200
+   - IMAGE_HEIGHT: 800
+
+   Create PROPERTY_MAP constant Record<string, PropertyImage[]>:
+
+   prop-001 (Shoreditch Heights Studio) has 3 images:
+   - Image 1: Unsplash URL with keywords "apartment,modern,interior,shoreditch1", alt "Modern Living Space"
+   - Image 2: Unsplash URL with keywords "studio,apartment,kitchen,shoreditch2", alt "Kitchen Area"
+   - Image 3: Unsplash URL with keywords "bedroom,modern,apartment,shoreditch3", alt "Bedroom"
+
+   prop-002 (Camden Loft) has 3 images:
+   - Image 1: Unsplash URL with keywords "loft,apartment,living,camden1", alt "Spacious Loft Living"
+   - Image 2: Unsplash URL with keywords "loft,interior,modern,camden2", alt "Modern Interior"
+   - Image 3: Unsplash URL with keywords "apartment,bathroom,luxury,camden3", alt "Bathroom"
+
+   prop-003 (Brixton Apartment) has 3 images:
+   - Image 1: Unsplash URL with keywords "apartment,cozy,living,brixton1", alt "Cozy Living Room"
+   - Image 2: Unsplash URL with keywords "apartment,dining,modern,brixton2", alt "Dining Area"
+   - Image 3: Unsplash URL with keywords "bedroom,apartment,comfortable,brixton3", alt "Comfortable Bedroom"
+
+   Format: `https://source.unsplash.com/${width}x${height}/?${keywords}`
+   Note: Seed keywords ensure consistent images per property
+
+   Export getPropertyImages function taking propertyId returning PropertyImage array
+   Export getAllPropertyImages function returning PropertyImagesData array
+
+2. Create lib/data/propertyDetails.ts:
+
+   Define PropertyAmenity interface:
+   - icon: string (emoji)
+   - name: string
+
+   Define PropertyDetails interface:
+   - propertyId: string
+   - propertyName: string
+   - description: string (2-3 paragraphs)
+   - pricePerNight: number
+   - pricePerMonth: number (with discount applied)
+   - monthlyDiscount: number (e.g., 0.2 for 20%)
+   - cleaningFee: number
+   - capacity object with: guests, bedrooms, beds, bathrooms (all numbers)
+   - minimumStay: number
+   - amenities: PropertyAmenity array (12+ items with emoji icons)
+   - policies object with: checkIn, checkOut, cancellation strings, houseRules string array
+
+   Create PROPERTY_DETAILS constant Record<string, PropertyDetails>:
+
+   prop-001 (Shoreditch Heights Studio):
+   - Description: Modern studio in trendy Shoreditch, high ceilings, natural light
+   - Price: £185/night, £4440/month (20% discount)
+   - Cleaning: £60
+   - Capacity: 2 guests, 1 bedroom, 1 bed, 1 bathroom
+   - Min stay: 7 nights
+   - Amenities: High-Speed WiFi 📶, Full Kitchen 🍳, Washing Machine 🧺, Smart TV 📺, AC 💨, Heating 🔥, Hair Dryer 🛁, Toiletries 🧴, Workspace 🏢, Self Check-In 🔒, Coffee Machine ☕, Dishware 🍽️
+   - Policies: Check-in after 3 PM, check-out before 11 AM, free cancellation 7 days before
+
+   prop-002 (Camden Loft):
+   - Description: Industrial-chic loft in Camden, exposed brick, character + comfort. Note maintenance issues being addressed
+   - Price: £220/night, £5280/month (20% discount)
+   - Cleaning: £80
+   - Capacity: 4 guests, 2 bedrooms, 2 beds, 1 bathroom
+   - Min stay: 14 nights
+   - Amenities: WiFi 📶 (note recent connectivity issues in reviews), Kitchen 🍳, Washer/Dryer 🧺, TV 📺, Heating 🔥, Bathtub 🛁, Desk 🏢, Keypad 🔒, Coffee ☕, Essentials 🍽️, Cleaning Supplies 🧹, Iron 👔
+   - Policies: Check-in after 4 PM, check-out before 10 AM, free cancellation 14 days before
+
+   prop-003 (Brixton Apartment):
+   - Description: Charming apartment in multicultural Brixton, authentic London, local character
+   - Price: £165/night, £3960/month (20% discount)
+   - Cleaning: £55
+   - Capacity: 3 guests, 1 bedroom, 2 beds, 1 bathroom
+   - Min stay: 10 nights
+   - Amenities: WiFi 📶, Kitchen 🍳, Washing Machine 🧺, TV 📺, Heating 🔥, Shower 🛁, Fan 💨, Lockbox 🔒, Tea & Coffee ☕, Cookware 🍽️, Toiletries 🧴, Hangers 👔
+   - Policies: Check-in after 3 PM, check-out before 11 AM, free cancellation 10 days before
+
+   Export getPropertyDetails function taking propertyId returning PropertyDetails or undefined
+   Export getAllPropertyDetails function returning PropertyDetails array
+
+Verify:
+- Run npm run build
+- Check TypeScript compilation
+- All types defined correctly
+```
+
+---
+
+## Phase 11: Property Page Components
+
+### Prompt for Claude Code:
+
+```
+Create components for public property detail page matching Flex Living design from https://theflex.global/property/163276:
+
+1. Create components/property/ImageGallery.tsx:
+
+   Client component with 'use client' directive (interactive carousel)
+
+   Props:
+   - images: PropertyImage array
+   - propertyName: string
+
+   Import useState from react
+   Import Mantine Stack, Image, Group, ActionIcon, Box, Text
+   Import icons IconChevronLeft, IconChevronRight
+
+   Local state: selectedIndex number (default 0)
+
+   If images empty, show placeholder Box with gray background, height 400, centered text "No images available"
+
+   Main image display:
+   - Box with position relative
+   - Image component with current image URL, alt, radius md, height 500, fit cover, box shadow
+   - Left/right navigation ActionIcons positioned absolute (only if multiple images):
+     * Left: absolute left 16, top 50%, transform translateY(-50%), onClick handlePrevious
+     * Right: absolute right 16, top 50%, transform translateY(-50%), onClick handleNext
+     * Both: size lg, radius xl, variant filled, color dark
+   - Image counter badge positioned absolute bottom 16, right 16, showing "X / Y", dark background with opacity
+
+   Thumbnail navigation (only if multiple images):
+   - Group with gap sm, justify center
+   - Map through all images creating clickable thumbnail Boxes
+   - Each thumbnail: width 100, height 75, fit cover
+   - Selected thumbnail has 3px teal border (#284E4C), scale 1.05, opacity 1
+   - Unselected thumbnails have transparent border, scale 1, opacity 0.6
+   - Smooth transitions on all transform/opacity changes
+
+   handlePrevious: sets index to last if at 0, else decrements
+   handleNext: sets index to 0 if at last, else increments
+
+   Export ImageGallery
+
+2. Create components/property/PropertyInfo.tsx:
+
+   Server component
+
+   Props: details: PropertyDetails
+
+   Import Mantine Stack, Title, Text, Grid, Card, Group, Badge, List, Box
+
+   Use Stack with gap xl for main container
+
+   Section 1 - Quick Stats Card:
+   - Card withBorder, padding lg, radius md
+   - Grid with 6 columns (responsive: base 4, xs 4)
+   - Display: Guests, Bedrooms, Beds, Bathrooms, Min. Nights, Price/Night
+   - Each stat: center-aligned Box with large number (size xl, fw 700) and dimmed label below
+
+   Section 2 - Description:
+   - Title "About This Property" (order 2, size h3, margin bottom md)
+   - Text with lineHeight 1.7, color dark, showing full description
+
+   Section 3 - Amenities:
+   - Title "Amenities" (order 2, size h3, margin bottom md)
+   - Grid with responsive columns (base 6, sm 4, md 3)
+   - Map amenities as Group with gap xs: emoji icon (size xl) + name (size sm)
+
+   Section 4 - Location:
+   - Title "Location" (order 2, size h3, margin bottom md)
+   - Map Placeholder Box (matching Flex Living design):
+     * Box with width 100%, height 300
+     * Background color #f5f5f5, border 1px solid #e0e0e0, border radius 8
+     * Display flex, align/justify center, position relative, overflow hidden
+     * Background grid pattern using linear-gradient (20px grid for map-like appearance)
+     * Centered content with large 📍 emoji (size 4rem)
+     * Property name as Text size sm, fw 600 below pin
+     * Small note "Interactive map in production" (size xs, color dimmed)
+
+   Section 5 - Stay Policies:
+   - Title "Stay Policies" (order 2, size h3, margin bottom md)
+   - Card withBorder, padding lg, radius md
+   - Stack showing: Check-in time, Check-out time, Cleaning fee, Cancellation policy, House rules list
+   - Format as Groups with label (fw 600) and value (color dimmed)
+   - House rules as List with items
+
+   Export PropertyInfo
+
+3. Create components/property/BookingPanel.tsx:
+
+   Client component with 'use client' directive (PRESENTATIONAL ONLY - non-functional)
+
+   Props: details: PropertyDetails
+
+   Import Mantine Card, Stack, Text, Button, Group, NumberInput, Box, Divider
+   Import DatePickerInput from @mantine/dates
+   Import useState
+
+   Local state:
+   - guests: number (default 1)
+   - dateRange: [Date | null, Date | null] (default [null, null])
+
+   Card container: withBorder, padding lg, radius md, shadow md, sticky position (top 20)
+
+   Pricing header:
+   - Large price "£X / night" (size xl, fw 700)
+   - Monthly price below with discount badge
+
+   Divider
+
+   Booking form (non-functional):
+   - DatePickerInput type range, label "Select Dates", clearable, minDate today
+   - NumberInput for guests (min 1, max capacity.guests)
+   - Button "Book Your Stay (Demo)" fullWidth, size md, disabled, cursor not-allowed
+   - Small text below: "Booking functionality not available in demo"
+
+   If dates selected, show price breakdown:
+   - Calculate nights between dates
+   - Show: "£X × Y nights = £Z"
+   - Show: "Cleaning fee = £X"
+   - Divider
+   - Show: "Total = £Z" (fw 700, size lg)
+
+   Export BookingPanel
+
+4. Create components/property/PropertyHeader.tsx:
 
    Server component
 
@@ -1405,23 +1720,26 @@ Verify:
 
 ---
 
-## Phase 11: Property Detail Page
+## Phase 12: Property Detail Page
 
 ### Prompt for Claude Code:
 
 ```
 Create public property detail page at app/property/[id]/page.tsx:
 
-CRITICAL DESIGN REFERENCE: Study the layout and design of https://theflex.global/property/163276
-Match the visual style, spacing, typography, and overall aesthetic of this page
-Focus on the clean, minimal, professional appearance
+CRITICAL DESIGN REFERENCE: Matches two-column layout from https://theflex.global/property/163276
+- Desktop: Two columns (left: images + info, right: booking panel sticky)
+- Mobile: Single column stacked layout
+- Professional Flex Living aesthetic with clean spacing
 
 Server component (fetches data server-side)
 
 Dynamic route with propertyId param extracted from params object with id property
 
-Import PropertyPageLayout, PropertyHeader, ReviewsSection components
-Import Mantine Container, Stack, Text, Title, Button
+Import all components:
+- PropertyPageLayout, PropertyHeader, ReviewsSection, ImageGallery, PropertyInfo, BookingPanel
+- Mantine Container, Stack, Text, Title, Button, Grid, Box
+- Data functions: getPropertyImages, getPropertyDetails
 
 Data Fetching (server-side):
 
@@ -1436,63 +1754,83 @@ Fetch approved reviews:
   * Example: const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 - Parse JSON response extracting success, propertyName, reviews, count
 
+Get property data:
+- Call getPropertyDetails(params.id) for property information
+- Call getPropertyImages(params.id) for image gallery
+
 Error handling:
-- If response not ok or success false:
+- If response not ok or success false OR propertyDetails not found:
   * Return error page with PropertyPageLayout containing:
     - Container size xl, padding y xl
-    - Stack gap md, align center
+    - Stack gap md, align center, text align center, padding top 60
     - Title order 2: "Property Not Found"
     - Text color dimmed: "The property you're looking for doesn't exist or has been removed."
-    - Button component Link to "/" with variant outline: "Back to Home"
-
-If reviews array empty, still render page (ReviewsSection handles empty state)
+    - Button component anchor to "/" with variant outline: "Back to Home"
 
 Calculate stats:
-- avgRating as average of all review ratings formatted to 1 decimal
-- totalReviews as reviews.length
+- avgRating as average of all review ratings formatted to 1 decimal (handle empty reviews array)
+- totalReviews as reviews.count
 
 Page structure inside PropertyPageLayout:
 
 Container size xl, padding y xl:
-- Stack gap xl:
+  Stack gap xl:
 
-  PropertyHeader with propertyName, avgRating, totalReviews
+    PropertyHeader with propertyName, avgRating, totalReviews
 
-  Optional placeholder div:
-  - Text color dimmed, size sm: "Property details would appear here in production"
+    Two-Column Grid (responsive):
+    - Grid with gutter xl
+    - Left column: Grid.Col span {{ base: 12, lg: 8 }}
+      * Stack gap xl containing:
+        - ImageGallery with images and propertyName
+        - PropertyInfo with details
+    - Right column: Grid.Col span {{ base: 12, lg: 4 }}
+      * Box wrapper (sticky on desktop, normal on mobile)
+      * BookingPanel with details
 
-  ReviewsSection with reviews (THIS IS THE MAIN FUNCTIONAL CONTENT)
+    Full-Width Reviews Section:
+    - Box with margin top xl
+    - ReviewsSection with reviews (MAIN FUNCTIONAL CONTENT)
 
-Metadata:
+Metadata (generated with generateMetadata):
 - Title: "{propertyName} - Guest Reviews | Flex Living"
 - Description: "Read {totalReviews} guest reviews for {propertyName}. Average rating: {avgRating}/10"
+- Handle property not found case with appropriate title and description
 
 Testing URLs:
-- /property/prop-001 (Shoreditch Heights Studio)
-- /property/prop-002 (Camden Loft)
-- /property/prop-003 (Brixton Apartment)
-- /property/invalid (should show 404)
+- /property/prop-001 (Shoreditch Heights Studio - excellence baseline)
+- /property/prop-002 (Camden Loft - declining trend with cleanliness issues)
+- /property/prop-003 (Brixton Apartment - channel mismatch)
+- /property/invalid (should show 404 error)
 
 IMPORTANT NOTES:
 - Only approved reviews shown (API filters)
 - Page fully server-rendered (good for SEO)
+- Fully responsive with Mantine Grid breakpoints
+- Two-column desktop layout, stacked mobile layout
+- Booking panel sticky on desktop only
 - Layout provides Flex Living context with header and footer
-- Reviews section is only functional part
-- Header and footer are presentational
+- Images from Unsplash CDN (no local storage)
+- All property details, amenities, policies displayed
 - Design matches https://theflex.global/property/163276 aesthetic
 
 Verify:
 - Visit each property URL
+- Desktop: two-column layout with sticky booking panel
+- Mobile: stacked single-column layout
+- Image gallery carousel works
 - Approved reviews display correctly
 - Unapproved reviews do NOT appear
+- All property sections render (stats, description, amenities, location, policies)
 - Test property with no approved reviews
 - Test invalid property ID
+- Responsive at all breakpoints
 - No console errors
 ```
 
 ---
 
-## Phase 12: Login Page
+## Phase 13: Login Page
 
 ### Prompt for Claude Code:
 
@@ -1590,7 +1928,7 @@ Verify:
 
 ---
 
-## Phase 13: Home Page & Dashboard Layout
+## Phase 14: Home Page & Dashboard Layout
 
 ### Prompt for Claude Code:
 
@@ -1656,24 +1994,24 @@ Verify:
 
 ---
 
-## Phase 14: Property Tab Link to Public Page
+## Phase 15: Property Selector Link to Public Page
 
 ### Prompt for Claude Code:
 
 ```
-Update components/dashboard/PropertyTabs.tsx to add "View Public Page" link:
+Update components/dashboard/PropertySelector.tsx to add "View Public Page" link:
 
 IMPORTANT: This link opens property detail page in NEW TAB so dashboard stays visible
 
-Modify PropertyTabs component:
+Modify PropertySelector component:
 
 Import Link from next/link
 Import IconExternalLink from @tabler/icons-react
 
-After the Tabs component, add a section that shows when a property is selected:
+After the current rating display, add a section that shows when a property is selected:
 
 If selectedId exists:
-- Group with gap xs, margin top md:
+- Group with gap xs, margin top sm:
   - Text size sm, color dimmed: "Preview public page:"
   - Button component as Link:
     * href as `/property/{selectedId}`
@@ -1699,7 +2037,7 @@ Verify:
 
 ---
 
-## Phase 15: README & Final Polish
+## Phase 16: README & Final Polish
 
 ### Prompt for Claude Code:
 
@@ -1854,7 +2192,7 @@ Verify README is comprehensive, accurate, and professional
 
 ---
 
-## Phase 16: Vercel Deployment Configuration
+## Phase 17: Vercel Deployment Configuration
 
 ### Prompt for Claude Code:
 

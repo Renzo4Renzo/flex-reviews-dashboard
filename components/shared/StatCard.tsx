@@ -1,11 +1,14 @@
 import { Card, Text, Badge, Group, Stack } from '@mantine/core';
 import { IconArrowUp, IconArrowDown, IconMinus } from '@tabler/icons-react';
+import { COLORS, FONT_WEIGHTS } from '@/lib/utils/designSystem';
+import InfoTooltip from './InfoTooltip';
 
 interface StatCardProps {
   title: string;
   value: string | number;
   delta?: number;
   description?: string;
+  info?: string;
 }
 
 const getDeltaColor = (delta: number): string => {
@@ -20,26 +23,29 @@ const getDeltaIcon = (delta: number) => {
   return IconMinus;
 };
 
-export function StatCard({ title, value, delta, description }: StatCardProps) {
+export function StatCard({ title, value, delta, description, info }: StatCardProps) {
   return (
-    <Card shadow="sm" padding="lg" withBorder>
+    <Card shadow="sm" padding="md" withBorder style={{ backgroundColor: COLORS.white }}>
       <Stack gap="xs">
-        <Text size="sm" c="dimmed" tt="uppercase" fw={700}>
-          {title}
-        </Text>
+        <Group gap="xs" justify="space-between">
+          <Text size="xs" c="dimmed" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
+            {title}
+          </Text>
+          {info && <InfoTooltip text={info} />}
+        </Group>
 
-        <Group align="baseline" gap="sm">
-          <Text size="xl" fw={700}>
+        <Group align="baseline" gap="xs">
+          <Text size="lg" fw={FONT_WEIGHTS.bold} c={COLORS.textPrimary}>
             {value}
           </Text>
           {delta !== undefined && delta !== 0 && (
             <Badge
               color={getDeltaColor(delta)}
               variant="light"
-              size="sm"
+              size="xs"
               leftSection={(() => {
                 const Icon = getDeltaIcon(delta);
-                return <Icon size={14} />;
+                return <Icon size={12} />;
               })()}
             >
               {delta > 0 ? '+' : ''}{delta.toFixed(1)}

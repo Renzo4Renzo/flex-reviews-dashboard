@@ -1,5 +1,5 @@
 import { NormalizedReview } from '@/types/review';
-import { SentimentData, KeywordMatch, ActionItem } from '@/types/analytics';
+import { SentimentData, KeywordMatch } from '@/types/analytics';
 
 const NEGATIVE_KEYWORDS = [
   'dirty',
@@ -84,42 +84,22 @@ export function extractKeywords(
   return matches.sort((a, b) => b.count - a.count).slice(0, 5);
 }
 
-function generateActionItems(keywords: KeywordMatch[]): ActionItem[] {
-  const actions: ActionItem[] = [];
+function generateActionItems(keywords: KeywordMatch[]): string[] {
+  const actions: string[] = [];
 
   keywords.forEach(({ phrase, count }) => {
     if (count < 3) return;
 
     if (['dirty', 'clean', 'mold', 'filthy', 'unclean', 'smell', 'odor'].some((w) => phrase.includes(w))) {
-      actions.push({
-        priority: 'high',
-        issue: `${count} reviews mention cleanliness concerns (${phrase})`,
-        action: 'Review and improve cleaning protocols, consider deep cleaning schedule',
-      });
+      actions.push(`Address cleanliness complaints: ${count} reviews mention "${phrase}"`);
     } else if (['noisy', 'noise', 'loud'].some((w) => phrase.includes(w))) {
-      actions.push({
-        priority: 'medium',
-        issue: `${count} reviews mention noise issues (${phrase})`,
-        action: 'Investigate noise insulation options or set clearer expectations',
-      });
+      actions.push(`Investigate noise insulation: ${count} reviews mention "${phrase}"`);
     } else if (['expensive', 'price', 'worth', 'overpriced'].some((w) => phrase.includes(w))) {
-      actions.push({
-        priority: 'medium',
-        issue: `${count} reviews mention pricing concerns (${phrase})`,
-        action: 'Review pricing strategy and value proposition',
-      });
+      actions.push(`Review pricing strategy: ${count} reviews mention "${phrase}"`);
     } else if (phrase.includes('wifi')) {
-      actions.push({
-        priority: 'high',
-        issue: `${count} reviews mention WiFi issues (${phrase})`,
-        action: 'Upgrade internet service or router equipment',
-      });
+      actions.push(`Upgrade internet: ${count} reviews mention "${phrase}"`);
     } else if (['broken', 'damaged', 'not working'].some((w) => phrase.includes(w))) {
-      actions.push({
-        priority: 'high',
-        issue: `${count} reviews mention maintenance issues (${phrase})`,
-        action: 'Conduct property inspection and address repairs immediately',
-      });
+      actions.push(`Conduct repairs: ${count} reviews mention "${phrase}"`);
     }
   });
 

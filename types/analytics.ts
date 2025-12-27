@@ -29,16 +29,10 @@ export interface KeywordMatch {
   reviewIds: number[];
 }
 
-export interface ActionItem {
-  priority: 'high' | 'medium' | 'low';
-  issue: string;
-  action: string;
-}
-
 export interface SentimentData {
   negative: KeywordMatch[];
   positive: KeywordMatch[];
-  actionItems: ActionItem[];
+  actionItems: string[];
 }
 
 export interface CriticalReview {

@@ -3,24 +3,14 @@
 import { Card, Badge, Group, Text, Switch, Stack } from '@mantine/core';
 import { NormalizedReview } from '@/types/review';
 import { formatDate } from '@/lib/utils/dateHelpers';
+import { getRatingColor } from '@/lib/utils/helpers';
+import { COLORS, FONT_WEIGHTS } from '@/lib/utils/designSystem';
 
 interface ReviewCardProps {
   review: NormalizedReview;
   mode: 'dashboard' | 'public';
   onApprovalToggle?: (id: number, approved: boolean) => void;
 }
-
-const getRatingColor = (rating: number): string => {
-  if (rating < 7) return 'red';
-  if (rating < 8) return 'yellow';
-  return 'green';
-};
-
-const getCategoryColor = (rating: number): string => {
-  if (rating < 7) return 'red';
-  if (rating < 8) return 'yellow';
-  return 'green';
-};
 
 export function ReviewCard({ review, mode, onApprovalToggle }: ReviewCardProps) {
   const handleApprovalChange = (checked: boolean) => {
@@ -30,43 +20,68 @@ export function ReviewCard({ review, mode, onApprovalToggle }: ReviewCardProps) 
   };
 
   return (
-    <Card shadow="sm" padding="lg" withBorder>
-      <Stack gap="md">
-        <Group justify="space-between" wrap="nowrap">
-          <div>
-            <Text fw={600} size="lg">
+    <Card
+      shadow="sm"
+      padding="md"
+      withBorder
+      style={{
+        backgroundColor: COLORS.white,
+        height: mode === 'public' ? '200px' : '100%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Stack gap="sm" style={{ height: '100%' }}>
+        {/* Header Section */}
+        <Group justify="space-between" align="flex-start" wrap="wrap" gap="xs">
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <Text fw={FONT_WEIGHTS.semibold} size="sm" c={COLORS.textPrimary} style={{ wordBreak: 'break-word' }}>
               {review.guestName}
             </Text>
-            <Text size="sm" c="dimmed">
+            <Text size="xs" c="dimmed">
               {formatDate(review.submittedAt)} • {review.channelName}
             </Text>
           </div>
-          <Group gap="xs">
-            <Badge color={getRatingColor(review.rating)}>
-              ⭐ {review.rating.toFixed(1)}
-            </Badge>
-            {mode === 'dashboard' && (
-              <Switch
-                checked={review.approved}
-                onChange={(event) => handleApprovalChange(event.currentTarget.checked)}
-                label={review.approved ? 'Approved' : 'Pending'}
-                color="green"
-              />
-            )}
-          </Group>
+          <Badge color={getRatingColor(review.rating)} size="sm">
+            ⭐ {review.rating.toFixed(1)}
+          </Badge>
         </Group>
 
-        <Text size="sm" style={{ lineHeight: 1.6 }}>
+        {/* Approval Toggle - Dashboard Only */}
+        {mode === 'dashboard' && (
+          <Switch
+            checked={review.approved}
+            onChange={(event) => handleApprovalChange(event.currentTarget.checked)}
+            label={review.approved ? 'Approved' : 'Not Approved'}
+            color="green"
+            size="xs"
+          />
+        )}
+
+        {/* Review Text */}
+        <Text
+          size="xs"
+          c={COLORS.textPrimary}
+          style={{
+            lineHeight: 1.5,
+            display: '-webkit-box',
+            WebkitLineClamp: 4,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}
+        >
           {review.publicReview}
         </Text>
 
-        <Group gap="xs">
+        {/* Category Badges */}
+        <Group gap={4}>
           {review.categories.map((category) => (
             <Badge
               key={category.category}
               variant="outline"
-              size="sm"
-              color={getCategoryColor(category.rating)}
+              size="xs"
+              color={getRatingColor(category.rating)}
             >
               {category.category.replace('_', ' ')}: {category.rating}
             </Badge>
