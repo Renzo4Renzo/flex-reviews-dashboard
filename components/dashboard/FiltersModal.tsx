@@ -117,8 +117,6 @@ export default function FiltersModal({
             input: { color: COLORS.textPrimary },
             calendarHeader: { color: COLORS.textPrimary },
             calendarHeaderLevel: { color: COLORS.textPrimary },
-            monthPickerControl: { color: COLORS.textPrimary },
-            yearPickerControl: { color: COLORS.textPrimary },
           }}
         />
 
