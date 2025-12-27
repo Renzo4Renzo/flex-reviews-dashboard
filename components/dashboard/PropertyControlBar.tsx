@@ -31,10 +31,13 @@ export default function PropertyControlBar({
       </div>
       <div style={{ flex: '0 1 auto', minWidth: '180px' }}>
         <Button
-          variant="outline"
           rightSection={<IconExternalLink size={16} />}
           onClick={handleViewPublicPage}
           size="md"
+          style={{
+            backgroundColor: '#284E4C',
+            color: 'white'
+          }}
         >
           View Public Page
         </Button>

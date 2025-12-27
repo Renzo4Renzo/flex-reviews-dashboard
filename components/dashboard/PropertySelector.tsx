@@ -1,6 +1,7 @@
 'use client';
 
 import { Select } from '@mantine/core';
+import { IconSearch } from '@tabler/icons-react';
 import { PropertyReviews } from '@/types/review';
 import { useMemo } from 'react';
 
@@ -33,6 +34,7 @@ export default function PropertySelector({ properties, selectedId, onSelect }: P
       searchable
       clearable={false}
       size="md"
+      rightSection={<IconSearch size={18} />}
       styles={{
         input: { fontWeight: 500, color: 'black' },
         option: { color: 'black' },
