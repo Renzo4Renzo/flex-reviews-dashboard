@@ -142,6 +142,8 @@ data/                 # Mock review data
 
 ## Deployment
 
+**Live Demo**: [flex-reviews-dashboard-lemon.vercel.app](https://flex-reviews-dashboard-lemon.vercel.app)
+
 ### Vercel (Recommended)
 
 1. Push code to GitHub/GitLab/Bitbucket
