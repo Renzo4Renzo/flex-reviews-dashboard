@@ -4,12 +4,13 @@ Property review management system for The Flex with analytics and approval workf
 
 ## Tech Stack
 
-- **Next.js 15** - App Router with TypeScript
+- **Next.js 16** - App Router with TypeScript
 - **Mantine UI v7** - Components, charts, and date pickers
 - **Zustand** - Client-side state management
 - **dayjs** - Date manipulation
 - **Recharts** - Data visualization (via Mantine Charts)
 - **Tabler Icons** - UI iconography
+- **BroadcastChannel API** - Real-time cross-tab communication
 
 ## Quick Start
 
@@ -39,6 +40,8 @@ Visit `http://localhost:3000` and log in with `manager@flex.com` / `flex2024`
 
 **Auto-Approval on Startup**: Server automatically approves representative reviews per property (3 for Shoreditch, 2 for Camden, 4 for Brixton) to showcase public pages immediately. Selections align with each property's narrative (excellence, decline, channel polarization).
 
+**Real-Time Cross-Tab Sync**: BroadcastChannel API enables instant updates between dashboard and property pages across browser tabs. When a manager approves/removes approval in the dashboard, property detail pages update immediately without refresh. Singleton pattern ensures efficient channel management and prevents race conditions.
+
 ### Data Flow
 
 1. Mock data loaded from `data/mock-reviews.json` on server initialization
@@ -47,12 +50,13 @@ Visit `http://localhost:3000` and log in with `manager@flex.com` / `flex2024`
 4. Dashboard fetches on mount, stores in Zustand
 5. Client-side filtering/sorting for instant UI updates
 6. Metrics calculated on-demand per property change
+7. Approval changes broadcast to all tabs via `broadcastManager` after successful API update
 
 ### Code Quality
 
-**DRY Principles**: Shared utilities in `lib/utils/helpers.ts` (rating colors, formatting, calculations), reusable single-responsibility components, centralized type definitions in `types/`, max 50-line functions.
+**DRY Principles**: Shared utilities in `lib/utils/` (rating colors, formatting, calculations, BroadcastChannel management), reusable single-responsibility components, centralized type definitions in `types/`, max 50-line functions.
 
-**Performance**: `useMemo` for expensive calculations (metrics, filtered data), `useCallback` for event handlers, Server Components reduce client bundle size.
+**Performance**: `useMemo` for expensive calculations (metrics, filtered data), `useCallback` for event handlers, Server Components reduce client bundle size, singleton BroadcastChannel manager prevents redundant channel creation.
 
 ## Data Normalization
 
@@ -130,7 +134,7 @@ lib/
 ├── analytics/        # Metrics calculation and sentiment analysis
 ├── data/             # Data store and property details
 ├── store/            # Zustand state management
-└── utils/            # Shared utilities (DRY principle)
+└── utils/            # Shared utilities (helpers, BroadcastChannel manager, DRY principle)
 
 types/                # TypeScript type definitions
 data/                 # Mock review data
