@@ -15,8 +15,8 @@ export default function TrendChart({ trendData }: TrendChartProps) {
 
   return (
     <Card shadow="sm" padding="md" withBorder style={{ backgroundColor: COLORS.white }}>
-      <Group justify="space-between" mb="sm">
-        <Text size="md" fw={FONT_WEIGHTS.semibold} c={COLORS.textPrimary}>
+      <Group gap={4} mb="sm">
+        <Text size="sm" c="black" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
           Rating Trends
         </Text>
         <InfoTooltip text="Track how your ratings change over time across different categories. Helps identify seasonal patterns and improvement trends." />

@@ -27,8 +27,8 @@ export function StatCard({ title, value, delta, description, info }: StatCardPro
   return (
     <Card shadow="sm" padding="md" withBorder style={{ backgroundColor: COLORS.white }}>
       <Stack gap="xs">
-        <Group gap="xs" justify="space-between">
-          <Text size="xs" c="dimmed" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
+        <Group gap={4}>
+          <Text size="sm" c="black" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
             {title}
           </Text>
           {info && <InfoTooltip text={info} />}
@@ -54,7 +54,7 @@ export function StatCard({ title, value, delta, description, info }: StatCardPro
         </Group>
 
         {description && (
-          <Text size="xs" c="dimmed">
+          <Text size="xs" c="black">
             {description}
           </Text>
         )}

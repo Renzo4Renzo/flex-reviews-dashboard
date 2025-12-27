@@ -20,8 +20,8 @@ export default function DashboardHeader({
   return (
     <Box
       style={{
-        backgroundColor: COLORS.white,
-        borderBottom: '1px solid #e9ecef',
+        backgroundColor: '#284E4C',
+        borderBottom: '1px solid #1f3a38',
         padding: '0.75rem 0',
       }}
     >
@@ -30,24 +30,26 @@ export default function DashboardHeader({
           value={activeTab}
           onChange={onTabChange}
           variant="pills"
+          styles={{
+            tab: {
+              color: 'white',
+              fontSize: '0.875rem',
+              padding: '0.5rem 0.75rem',
+            },
+          }}
+          classNames={{
+            tab: 'dashboard-tab',
+          }}
         >
           <Tabs.List>
-            <Tabs.Tab
-              value="analytics"
-              c={COLORS.textPrimary}
-              style={{ fontSize: '0.875rem', padding: '0.5rem 0.75rem' }}
-            >
+            <Tabs.Tab value="analytics">
               <Box component="span" visibleFrom="sm" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <IconChartBar size={16} />
                 Analytics
               </Box>
               <Box component="span" hiddenFrom="sm">Analytics</Box>
             </Tabs.Tab>
-            <Tabs.Tab
-              value="reviews"
-              c={COLORS.textPrimary}
-              style={{ fontSize: '0.875rem', padding: '0.5rem 0.75rem' }}
-            >
+            <Tabs.Tab value="reviews">
               <Box component="span" visibleFrom="sm" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <IconList size={16} />
                 Reviews ({reviewsCount})
@@ -58,14 +60,24 @@ export default function DashboardHeader({
         </Tabs>
 
         <Button
-          variant="outline"
-          color="red"
-          leftSection={<IconLogout size={14} />}
           onClick={onLogout}
-          size="xs"
-          style={{ fontSize: '0.75rem', padding: '0.375rem 0.75rem' }}
+          className="dashboard-logout-btn"
+          styles={{
+            root: {
+              color: 'white',
+              fontSize: '0.875rem',
+              padding: '0.5rem 0.75rem',
+              borderRadius: '1000px',
+              backgroundColor: 'transparent',
+              border: 'none',
+            },
+          }}
         >
-          Logout
+          <Box component="span" visibleFrom="sm" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <IconLogout size={16} />
+            Logout
+          </Box>
+          <Box component="span" hiddenFrom="sm">Logout</Box>
         </Button>
       </Group>
     </Box>

@@ -11,11 +11,11 @@ interface ChannelStatsProps {
 export default function ChannelStats({ channelStats }: ChannelStatsProps) {
   return (
     <Card shadow="sm" padding="md" withBorder style={{ backgroundColor: COLORS.white, height: '100%' }}>
-      <Group justify="space-between" mb="sm">
-        <Text size="md" fw={FONT_WEIGHTS.semibold} c={COLORS.textPrimary}>
+      <Group gap={4} mb="sm">
+        <Text size="sm" c="black" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
           Channel Performance
         </Text>
-        <InfoTooltip text="Compare performance across different booking channels (Airbnb, Booking.com, VRBO). Shows average rating and number of reviews per channel." />
+        <InfoTooltip text="Compare performance across different booking channels (Airbnb, Booking.com, Expedia). Shows average rating and number of reviews per channel." />
       </Group>
       <Stack gap="sm">
         {channelStats.map((channel) => (

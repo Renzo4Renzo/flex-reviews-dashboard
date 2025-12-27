@@ -15,8 +15,8 @@ export default function SentimentDisplay({ sentiment }: SentimentDisplayProps) {
 
   return (
     <Card shadow="sm" padding="md" withBorder style={{ backgroundColor: COLORS.white, height: '100%' }}>
-      <Group justify="space-between" mb="md">
-        <Text size="md" fw={FONT_WEIGHTS.semibold} c={COLORS.textPrimary}>
+      <Group gap={4} mb="md">
+        <Text size="sm" c="black" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
           Sentiment Analysis
         </Text>
         <InfoTooltip text="Most frequently mentioned positive and negative keywords from guest reviews. Helps identify what guests love and what needs improvement." />

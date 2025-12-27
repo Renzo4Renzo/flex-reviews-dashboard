@@ -24,7 +24,7 @@ export default function StatsOverview({ metrics }: StatsOverviewProps) {
         title="Total Reviews"
         value={metrics.totalReviews}
         description="Across all channels"
-        info="The total number of reviews received from all booking channels (Airbnb, Booking.com, VRBO, etc.)."
+        info="The total number of reviews received from all booking channels (Airbnb, Booking.com, Expedia)."
       />
       <StatCard
         title="Public Reviews"

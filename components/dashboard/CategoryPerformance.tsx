@@ -20,8 +20,8 @@ export default function CategoryPerformance({ categoryPerformance }: CategoryPer
 
   return (
     <Card shadow="sm" padding="md" withBorder style={{ backgroundColor: COLORS.white, height: '100%' }}>
-      <Group justify="space-between" mb="sm">
-        <Text size="md" fw={FONT_WEIGHTS.semibold} c={COLORS.textPrimary}>
+      <Group gap={4} mb="sm">
+        <Text size="sm" c="black" tt="uppercase" fw={FONT_WEIGHTS.semibold} style={{ letterSpacing: '0.5px' }}>
           Category Performance
         </Text>
         <InfoTooltip text="Average ratings for each category (Cleanliness, Communication, Location, Value). Lower-rated categories appear first to highlight areas for improvement." />

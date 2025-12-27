@@ -41,3 +41,17 @@ body {
 .mantine-DatePickerInput-input {
   color: black !important;
 }
+
+/* Dashboard header tab styles */
+.dashboard-tab[data-active] {
+  background-color: #1f3a38 !important;
+  color: white !important;
+}
+
+.dashboard-tab:hover {
+  background-color: #1f3a38 !important;
+}
+
+.dashboard-logout-btn:hover {
+  background-color: #1f3a38 !important;
+}
