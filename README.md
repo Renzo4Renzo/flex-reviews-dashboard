@@ -5,8 +5,7 @@ Property review management system for Flex Living with analytics and approval wo
 ## Tech Stack
 
 - **Next.js 15** - App Router with TypeScript
-- **TypeScript** - Full type safety across codebase
-- **Mantine UI v7** - Core components, charts, and date pickers
+- **Mantine UI v7** - Components, charts, and date pickers
 - **Zustand** - Client-side state management
 - **dayjs** - Date manipulation
 - **Recharts** - Data visualization (via Mantine Charts)
@@ -30,9 +29,9 @@ Visit `http://localhost:3000` and log in with:
 
 **Server-First Approach**: Default to Server Components for data fetching and static rendering. Client Components (`'use client'`) only where interactivity is required (forms, charts, modals).
 
-**State Management**: Zustand handles client-side state (filters, sorting, selected property). Avoids prop drilling while keeping bundle size minimal compared to Redux.
+**State Management**: Zustand handles client-side state (filters, sorting, selected property) to avoid prop drilling with minimal bundle size.
 
-**In-Memory Data Store**: Reviews stored in memory on server startup via singleton pattern. Production would use PostgreSQL, but this demonstrates API design and normalization logic without infrastructure overhead.
+**In-Memory Data Store**: Reviews stored in memory via singleton pattern. Production would use PostgreSQL, but this demonstrates API design and normalization without infrastructure overhead.
 
 **Auto-Approval on Startup**: Server automatically approves representative reviews per property (3 for Shoreditch, 2 for Camden, 4 for Brixton) to showcase public pages immediately. Selections align with each property's narrative (excellence, decline, channel polarization).
 
@@ -47,32 +46,23 @@ Visit `http://localhost:3000` and log in with:
 
 ### Code Quality
 
-Following DRY principles:
+**DRY Principles**: Shared utilities in `lib/utils/helpers.ts` (rating colors, formatting, calculations), reusable single-responsibility components, centralized type definitions in `types/`, max 50-line functions.
 
-- Shared utilities in `lib/utils/helpers.ts` (rating colors, formatting, calculations)
-- Reusable components with single responsibilities
-- Type definitions centralized in `types/` directory
-- Maximum function length: 50 lines
-
-Performance optimizations:
-
-- `useMemo` for expensive calculations (metrics, filtered data)
-- `useCallback` for event handlers passed to children
-- Server Components by default reduce client bundle size
+**Performance**: `useMemo` for expensive calculations (metrics, filtered data), `useCallback` for event handlers, Server Components reduce client bundle size.
 
 ## Data Normalization
 
-The `/api/reviews/hostaway` endpoint transforms raw Hostaway API data into normalized reviews:
+The `/api/reviews/hostaway` endpoint transforms raw Hostaway API data, adding:
 
-**Fields added during normalization:**
 - `propertyId` - Mapped from `listingName` (e.g., "Shoreditch Heights Studio" → "prop-001")
 - `propertyName` - Clean property name for display
 - `channelName` - Human-readable channel (resolved from `channelId`: 2018 → "Airbnb")
 - `categories` - Alias for `reviewCategory` array
-- `approved` - Review approval status (defaults to `false`, managed via dashboard)
-- `rating` - Calculated from category averages when `rating` is `null`
+- `approved` - Review approval status (defaults `false`, managed via dashboard)
+- `rating` - Calculated from category averages when null
 
 **Response format matches Hostaway API:**
+
 ```json
 {
   "status": "success",
@@ -84,38 +74,13 @@ The `/api/reviews/hostaway` endpoint transforms raw Hostaway API data into norma
 
 ## API Routes
 
-### Authentication
+**POST /api/auth/login** - `{email, password}` - Returns success status and sets HTTP-only auth cookie.
 
-**POST /api/auth/login**
+**GET /api/reviews/hostaway** _(tested by assessment)_ - Returns all normalized reviews across all properties.
 
-```json
-{
-  "email": "manager@flex.com",
-  "password": "flex2024"
-}
-```
+**POST /api/reviews/[id]/approve** - `{approved: true}` - Updates review approval status. Changes persist in-memory only (resets on restart).
 
-Returns success status and sets HTTP-only auth cookie.
-
-### Reviews
-
-**GET /api/reviews/hostaway** _(tested by assessment)_
-
-Returns all normalized reviews across all properties.
-
-**POST /api/reviews/[id]/approve**
-
-```json
-{
-  "approved": true
-}
-```
-
-Updates review approval status. Changes persist in-memory only (resets on restart).
-
-**GET /api/reviews/public/[propertyId]**
-
-Returns only approved reviews for a property, sorted by date descending.
+**GET /api/reviews/public/[propertyId]** - Returns only approved reviews for a property, sorted by date descending.
 
 ## Analytics Implementation
 
@@ -133,15 +98,15 @@ Returns only approved reviews for a property, sorted by date descending.
 
 74 reviews across 3 properties demonstrating distinct scenarios:
 
-**Shoreditch Heights Studio (prop-001)**: Excellence baseline. 33 reviews spanning July-December 2024, avg rating 9.2. Consistently high ratings (8-10) across all categories. Designed to showcase successful property management with steady performance. Includes positive keywords throughout ("clean", "spotless", "excellent location", "responsive host").
+**Shoreditch Heights Studio (prop-001)**: Excellence baseline. 33 reviews (July-Dec 2024), avg 9.2. Consistently high ratings (8-10) across all categories showcasing successful property management. Positive keywords: "clean", "spotless", "excellent location", "responsive host".
 
-**Camden Loft (prop-002)**: Declining performance narrative. 22 reviews showing clear deterioration from 8.5 (July-Aug) to 6.2 (Nov-Dec). Contains 8 mentions of "dirty", 3 of "mold/moldy", focused complaints about bathroom and kitchen cleanliness. Distribution weighted toward later months to demonstrate trend. Intentionally triggers critical issues alerts and generates action items (cleanliness audit, maintenance review). Mix of channels with Booking.com reviews more critical than Airbnb.
+**Camden Loft (prop-002)**: Declining performance narrative. 22 reviews deteriorating from 8.5 (July-Aug) to 6.2 (Nov-Dec). 8× "dirty", 3× "mold/moldy", bathroom/kitchen complaints. Distribution weighted toward later months. Triggers critical issues alerts and action items (cleanliness audit, maintenance review). Booking.com reviews more critical than Airbnb.
 
-**Brixton Apartment (prop-003)**: Channel polarization case study. 19 reviews demonstrating platform-specific guest expectations. Airbnb guests (11 reviews, avg 8.9) respond positively to "charming", "authentic", "local character" narrative. Booking.com/Expedia guests (8 reviews, avg 6.5) flag "expensive", "small", "not as described" value concerns. Same property, different perceptions based on booking platform and guest demographics.
+**Brixton Apartment (prop-003)**: Channel polarization case study. 19 reviews showing platform-specific expectations. Airbnb guests (11 reviews, avg 8.9) respond to "charming", "authentic", "local character". Booking.com/Expedia guests (8 reviews, avg 6.5) flag "expensive", "small", "not as described". Same property, different perceptions by platform.
 
 ## Google Reviews Integration
 
-See [google-reviews-findings.md](google-reviews-findings.md) for detailed research.
+See [google-reviews-findings.md](google-reviews-findings.md) for detailed findings.
 
 ## Project Structure
 
@@ -179,16 +144,12 @@ data/                 # Mock review data
 
 ### Vercel (Recommended)
 
-This application is optimized for Vercel deployment:
-
 1. Push code to GitHub/GitLab/Bitbucket
-2. Visit [vercel.com](https://vercel.com) and import your repository
+2. Visit [vercel.com](https://vercel.com) and import repository
 3. Vercel auto-detects Next.js configuration
-4. Click "Deploy"
+4. Deploy
 
-**Environment Variables**: None required for demo deployment.
-
-**Post-Deployment**: Visit your Vercel URL, log in with `manager@flex.com` / `flex2024`
+No environment variables required. Post-deployment, log in with `manager@flex.com` / `flex2024`
 
 ### Local Production Build
 

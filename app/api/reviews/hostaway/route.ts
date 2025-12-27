@@ -3,6 +3,15 @@ import { reviewsStore } from '@/lib/data/reviewsStore';
 
 export async function GET() {
   try {
+    // NOTE: In production, this would call the real Hostaway API:
+    // const response = await fetch('https://api.hostaway.com/v1/reviews', {
+    //   headers: {
+    //     'Authorization': `Bearer ${process.env.HOSTAWAY_ACCESS_TOKEN}`,
+    //   },
+    // });
+    // const hostawayData = await response.json();
+    //
+    // For this assessment, using mock data as the sandbox API contains no reviews
     const reviews = reviewsStore.getAllReviews();
 
     // Return Hostaway API format: { status, result, count, offset }
