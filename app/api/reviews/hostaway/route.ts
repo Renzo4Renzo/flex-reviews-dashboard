@@ -5,15 +5,17 @@ export async function GET() {
   try {
     const reviews = reviewsStore.getAllReviews();
 
+    // Return Hostaway API format: { status, result, count, offset }
     return NextResponse.json({
-      success: true,
-      reviews,
+      status: 'success',
+      result: reviews,
       count: reviews.length,
+      offset: null,
     });
   } catch (error) {
     console.error('Error fetching reviews:', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to fetch reviews' },
+      { status: 'error', message: 'Failed to fetch reviews' },
       { status: 500 }
     );
   }

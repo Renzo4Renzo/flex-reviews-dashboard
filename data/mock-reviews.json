@@ -28,9 +28,7 @@
       "submittedAt": "2025-07-05T09:30:00Z",
       "guestName": "Diana Prince",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3043,
@@ -59,9 +57,7 @@
       "submittedAt": "2025-07-10T10:30:00Z",
       "guestName": "Marcus Wright",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3001,
@@ -119,9 +115,7 @@
       "submittedAt": "2025-07-15T09:00:00Z",
       "guestName": "Sarah Connor",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2001,
@@ -179,9 +173,7 @@
       "submittedAt": "2025-07-22T10:30:00Z",
       "guestName": "Rachel Green",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3002,
@@ -239,9 +231,7 @@
       "submittedAt": "2025-07-28T13:30:00Z",
       "guestName": "Ross Geller",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2002,
@@ -295,9 +285,7 @@
       "submittedAt": "2025-08-05T14:15:00Z",
       "guestName": "Monica Geller",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 1001,
@@ -355,9 +343,7 @@
       "submittedAt": "2025-08-08T10:30:00Z",
       "guestName": "Lily Harris",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3003,
@@ -440,9 +426,7 @@
       "submittedAt": "2025-08-15T14:30:00Z",
       "guestName": "Emma Thompson",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3038,
@@ -471,9 +455,7 @@
       "submittedAt": "2025-08-18T15:00:00Z",
       "guestName": "Chandler Bing",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3019,
@@ -502,9 +484,7 @@
       "submittedAt": "2025-08-20T12:00:00Z",
       "guestName": "Charlotte Taylor",
       "listingName": "Brixton Apartment",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2003,
@@ -583,9 +563,7 @@
       "submittedAt": "2025-08-25T13:00:00Z",
       "guestName": "Maria Garcia",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 1003,
@@ -643,9 +621,7 @@
       "submittedAt": "2025-09-03T11:20:00Z",
       "guestName": "James Mitchell",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3030,
@@ -674,9 +650,7 @@
       "submittedAt": "2025-09-05T10:15:00Z",
       "guestName": "Lars Nielsen",
       "listingName": "Brixton Apartment",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 2004,
@@ -788,9 +762,7 @@
       "submittedAt": "2025-09-12T11:45:00Z",
       "guestName": "Phoebe Buffay",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2005,
@@ -844,9 +816,7 @@
       "submittedAt": "2025-09-18T15:30:00Z",
       "guestName": "Henry Wilson",
       "listingName": "Brixton Apartment",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 1005,
@@ -900,9 +870,7 @@
       "submittedAt": "2025-09-25T16:00:00Z",
       "guestName": "Jack Robinson",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3006,
@@ -956,9 +924,7 @@
       "submittedAt": "2025-09-30T14:30:00Z",
       "guestName": "Carlos Rodriguez",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 2006,
@@ -1016,9 +982,7 @@
       "submittedAt": "2025-10-05T16:20:00Z",
       "guestName": "Joey Tribbiani",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 1006,
@@ -1101,9 +1065,7 @@
       "submittedAt": "2025-10-12T16:45:00Z",
       "guestName": "Sophie Anderson",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3007,
@@ -1161,9 +1123,7 @@
       "submittedAt": "2025-10-18T11:15:00Z",
       "guestName": "John Connor",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 1007,
@@ -1213,9 +1173,7 @@
       "submittedAt": "2025-10-20T11:00:00Z",
       "guestName": "Anna Schmidt",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 2008,
@@ -1273,9 +1231,7 @@
       "submittedAt": "2025-10-28T11:45:00Z",
       "guestName": "Amelia Johnson",
       "listingName": "Brixton Apartment",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3008,
@@ -1362,9 +1318,7 @@
       "submittedAt": "2025-11-08T09:15:00Z",
       "guestName": "Oliver Davis",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2009,
@@ -1418,9 +1372,7 @@
       "submittedAt": "2025-11-10T14:00:00Z",
       "guestName": "Giulia Rossi",
       "listingName": "Brixton Apartment",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 3009,
@@ -1528,9 +1480,7 @@
       "submittedAt": "2025-11-15T15:45:00Z",
       "guestName": "Pierre Dubois",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 3045,
@@ -1559,9 +1509,7 @@
       "submittedAt": "2025-11-20T13:00:00Z",
       "guestName": "Dallas Howard",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2011,
@@ -1619,9 +1567,7 @@
       "submittedAt": "2025-11-24T13:30:00Z",
       "guestName": "Isabella White",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3010,
@@ -1700,9 +1646,7 @@
       "submittedAt": "2025-11-28T12:00:00Z",
       "guestName": "Kyle Reese",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2012,
@@ -1760,9 +1704,7 @@
       "submittedAt": "2025-12-01T14:20:00Z",
       "guestName": "George Martin",
       "listingName": "Brixton Apartment",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3018,
@@ -1791,9 +1733,7 @@
       "submittedAt": "2025-12-05T10:00:00Z",
       "guestName": "William Brown",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2013,
@@ -1897,9 +1837,7 @@
       "submittedAt": "2025-12-10T12:30:00Z",
       "guestName": "Elena Popov",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 2014,
@@ -1957,9 +1895,7 @@
       "submittedAt": "2025-12-15T11:30:00Z",
       "guestName": "Hans Mueller",
       "listingName": "Brixton Apartment",
-      "channelId": 2005,
-      "channelName": "Booking.com",
-      "approved": true
+      "channelId": 2005
     },
     {
       "id": 1012,
@@ -2017,9 +1953,7 @@
       "submittedAt": "2025-12-18T14:30:00Z",
       "guestName": "Ellen Ripley",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 3044,
@@ -2048,9 +1982,7 @@
       "submittedAt": "2025-12-20T15:45:00Z",
       "guestName": "Kate Connor",
       "listingName": "Shoreditch Heights Studio",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     },
     {
       "id": 2015,
@@ -2137,11 +2069,7 @@
       "submittedAt": "2025-12-22T16:30:00Z",
       "guestName": "Bruce Wayne",
       "listingName": "Camden Loft",
-      "channelId": 2018,
-      "channelName": "Airbnb",
-      "approved": true
+      "channelId": 2018
     }
-  ],
-  "count": 74,
-  "offset": null
+  ]
 }

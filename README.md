@@ -60,6 +60,28 @@ Performance optimizations:
 - `useCallback` for event handlers passed to children
 - Server Components by default reduce client bundle size
 
+## Data Normalization
+
+The `/api/reviews/hostaway` endpoint transforms raw Hostaway API data into normalized reviews:
+
+**Fields added during normalization:**
+- `propertyId` - Mapped from `listingName` (e.g., "Shoreditch Heights Studio" → "prop-001")
+- `propertyName` - Clean property name for display
+- `channelName` - Human-readable channel (resolved from `channelId`: 2018 → "Airbnb")
+- `categories` - Alias for `reviewCategory` array
+- `approved` - Review approval status (defaults to `false`, managed via dashboard)
+- `rating` - Calculated from category averages when `rating` is `null`
+
+**Response format matches Hostaway API:**
+```json
+{
+  "status": "success",
+  "result": [...],
+  "count": 74,
+  "offset": null
+}
+```
+
 ## API Routes
 
 ### Authentication

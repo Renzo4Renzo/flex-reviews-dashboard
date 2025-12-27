@@ -73,11 +73,11 @@ export default function DashboardPage() {
       }
 
       const data = await response.json();
-      if (!data.success) {
+      if (data.status !== 'success') {
         throw new Error('API returned error');
       }
 
-      const groupedProperties = groupReviewsByProperty(data.reviews);
+      const groupedProperties = groupReviewsByProperty(data.result);
       setProperties(groupedProperties);
 
       if (groupedProperties.length > 0) {
