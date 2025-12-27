@@ -18,10 +18,14 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000` and log in with:
+Create `.env.local` with:
 
-- Email: `manager@flex.com`
-- Password: `flex2024`
+```
+AUTH_EMAIL=manager@flex.com
+AUTH_PASSWORD=flex2024
+```
+
+Visit `http://localhost:3000` and log in with `manager@flex.com` / `flex2024`
 
 ## Key Design Decisions
 
@@ -144,20 +148,18 @@ data/                 # Mock review data
 
 **Live Demo**: [flex-reviews-dashboard-lemon.vercel.app](https://flex-reviews-dashboard-lemon.vercel.app)
 
-### Vercel (Recommended)
+This project was deployed on Vercel with the following ENV variables:
+
+```
+AUTH_EMAIL=manager@flex.com
+AUTH_PASSWORD=flex2024
+```
+
+### Deploying Your Own Instance
 
 1. Push code to GitHub/GitLab/Bitbucket
 2. Visit [vercel.com](https://vercel.com) and import repository
-3. Vercel auto-detects Next.js configuration
-4. Deploy
-
-No environment variables required. Post-deployment, log in with `manager@flex.com` / `flex2024`
-
-### Local Production Build
-
-```bash
-npm run build
-npm run start
-```
-
-Test at `http://localhost:3000`
+3. Add environment variables in Vercel dashboard:
+   - `AUTH_EMAIL` - Login email
+   - `AUTH_PASSWORD` - Login password
+4. Deploy (Vercel auto-detects Next.js configuration)
