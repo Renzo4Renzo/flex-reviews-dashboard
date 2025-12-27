@@ -12,7 +12,7 @@ interface ImageGalleryProps {
  * Image Gallery Component matching Flex Living grid layout
  * Grid layout: Large image on left, 2x2 smaller images on right
  */
-export default function ImageGallery({ images, propertyName }: ImageGalleryProps) {
+export default function ImageGallery({ images }: ImageGalleryProps) {
   if (images.length === 0) {
     return (
       <Box
@@ -49,7 +49,7 @@ export default function ImageGallery({ images, propertyName }: ImageGalleryProps
         </Box>
 
         {/* Smaller images on the right - adapt to available images */}
-        {thumbnails.map((image, index) => (
+        {thumbnails.map((image) => (
           <Image
             key={image.id}
             src={image.url}

@@ -2,7 +2,6 @@
 
 import { Group, Tabs, Button, Box } from '@mantine/core';
 import { IconChartBar, IconList, IconLogout } from '@tabler/icons-react';
-import { COLORS, FONT_WEIGHTS } from '@/lib/utils/designSystem';
 
 interface DashboardHeaderProps {
   activeTab: string | null;

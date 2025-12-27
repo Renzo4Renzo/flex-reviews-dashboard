@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, Button, Group } from '@mantine/core';
+import { Menu, Button } from '@mantine/core';
 import { IconChevronDown, IconSortAscending, IconSortDescending } from '@tabler/icons-react';
 
 interface SortButtonProps {

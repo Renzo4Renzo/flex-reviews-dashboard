@@ -14,6 +14,13 @@ import { DatePickerInput } from "@mantine/dates";
 import { COLORS } from "@/lib/utils/designSystem";
 import { useDashboardStore } from "@/lib/store/dashboardStore";
 
+interface Filters {
+  channels?: string[];
+  categories?: string[];
+  dateRange?: [Date | null, Date | null];
+  ratingRange?: [number, number];
+}
+
 interface FiltersModalProps {
   opened: boolean;
   onClose: () => void;
@@ -23,7 +30,7 @@ interface FiltersModalProps {
     dateRange: [Date | null, Date | null];
     ratingRange: [number, number];
   };
-  onFilterChange: (filters: any) => void;
+  onFilterChange: (filters: Filters) => void;
   onClearFilters: () => void;
 }
 

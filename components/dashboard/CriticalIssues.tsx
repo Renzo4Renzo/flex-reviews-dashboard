@@ -42,7 +42,7 @@ export default function CriticalIssues({
           </Text>
           <InfoTooltip text="Reviews with ratings below 5 stars or any category rated below 4. These require immediate attention to maintain property reputation." />
         </Group>
-        <Text c="black" size="xs">
+        <Text c="dimmed" size="xs">
           No critical issues in the last 30 days
         </Text>
       </Card>
@@ -63,7 +63,7 @@ export default function CriticalIssues({
         <InfoTooltip text="Reviews with ratings below 5 stars or any category rated below 4. These require immediate attention to maintain property reputation." />
       </Group>
 
-      <SimpleGrid cols={{ base: 1, md: 2, lg: 3 }} spacing="md">
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="md">
         {criticalReviews.map((review) => (
           <Card
             key={review.id}

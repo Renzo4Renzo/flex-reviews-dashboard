@@ -67,6 +67,7 @@ export default function PropertyPage() {
     fetchPropertyData();
   }, [id]);
 
+
   // Listen for approval changes from dashboard (cross-tab communication)
   useEffect(() => {
     if (typeof window === 'undefined' || !('BroadcastChannel' in window)) return;
@@ -110,6 +111,7 @@ export default function PropertyPage() {
     };
 
     return () => channel.close();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Empty dependency array - only create listener once
 
 

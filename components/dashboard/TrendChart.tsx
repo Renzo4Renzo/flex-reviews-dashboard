@@ -25,23 +25,26 @@ export default function TrendChart({ trendData }: TrendChartProps) {
       {validData.length === 0 ? (
         <Text c="dimmed" size="sm">Not enough data for trend chart</Text>
       ) : (
-        <LineChart
-          h={240}
-          data={validData}
-          dataKey="month"
-          series={[
-            { name: 'avgRating', label: 'Overall', color: 'blue' },
-            { name: 'cleanliness', label: 'Cleanliness', color: 'teal' },
-            { name: 'communication', label: 'Communication', color: 'violet' },
-            { name: 'location', label: 'Location', color: 'green' },
-            { name: 'value', label: 'Value', color: 'orange' },
-          ]}
-          curveType="monotone"
-          withLegend
-          withTooltip
-          withDots={true}
-          yAxisProps={{ domain: [0, 10] }}
-        />
+        <div style={{ width: '100%', marginLeft: '-10px' }}>
+          <LineChart
+            h={240}
+            data={validData}
+            dataKey="month"
+            series={[
+              { name: 'avgRating', label: 'Overall', color: 'blue' },
+              { name: 'cleanliness', label: 'Cleanliness', color: 'teal' },
+              { name: 'communication', label: 'Communication', color: 'violet' },
+              { name: 'location', label: 'Location', color: 'green' },
+              { name: 'value', label: 'Value', color: 'orange' },
+            ]}
+            curveType="monotone"
+            withLegend
+            withTooltip
+            withDots={true}
+            yAxisProps={{ domain: [0, 10], style: { fill: '#000' } }}
+            xAxisProps={{ style: { fill: '#000' } }}
+          />
+        </div>
       )}
     </Card>
   );
