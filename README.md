@@ -1,6 +1,6 @@
 # Flex Reviews Dashboard
 
-Property review management system for Flex Living with analytics and approval workflow.
+Property review management system for The Flex with analytics and approval workflow.
 
 ## Tech Stack
 
